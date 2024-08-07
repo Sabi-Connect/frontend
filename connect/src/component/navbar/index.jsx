@@ -1,6 +1,25 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
+import style from './index.module.css'
+import {Button, Stack} from "@mui/material";
+
+const CustomButton1 = styled(Button)(({ theme }) => ({
+    backgroundColor: '#33FF57',
+    color: '#fff',
+    '&:hover': {
+        backgroundColor: '#FF3D20',
+    },
+}));
+
+const CustomButton2 = styled(Button)(({ theme }) => ({
+    borderColor: '#33FF57',
+    color: '#fff',
+    '&:hover': {
+        borderColor: '#28CC47',
+        color: '#28CC47',
+    },
+}));
 
 
 const SearchField = styled(TextField)({
@@ -23,32 +42,39 @@ const SearchField = styled(TextField)({
 
 const NavBar = () => {
     return (
-        <>
-            <div className={`flex items-center mb-4`}>
-                <p className={`text-lg font-semibold`}>SabiConnect</p>
+        <div className={style.nav}>
+            <div className={style.navA}>
+                <p >SabiConnect</p>
             </div>
 
-            <div className={`hidden md:flex space-x-6 text-lg pl-96`}>
-                <p className={`hidden md:flex space-x-6 text-lg`}>Home</p>
-                <p className={`hover:text-gray-600 cursor-pointer`}>Find Worker</p>
-                <p className={`hover:text-gray-600 cursor-pointer`}>Clients</p>
-                <div>
-                    <SearchField
-                        variant="outlined"
-                        placeholder="Search"
-                        size="small"
-                    />
-                </div>
-            </div>
-            <div>
-                <p>Hello World!</p>
+            <div className={style.nav2}>
+                <p >Home</p>
+                <p >Find Worker</p>
+                <p >Clients</p>
+                {/*<div>*/}
+                {/*    <SearchField*/}
+                {/*        variant="outlined"*/}
+                {/*        placeholder="Search"*/}
+                {/*        size="small"*/}
+                {/*    />*/}
+                {/*</div>*/}
             </div>
 
-            <div className='flex items-center space-x-4'>
-                <button className='bg-[#093c5e] text-white px-4 py-2 rounded-3xl hover:bg-[#093c5e]'>Login</button>
-                <button className='bg-[#093c5e] text-white px-4 py-2 rounded-3xl hover:bg-[#093c5e]'>Signup</button>
+
+
+
+            <div className={style.btn1}>
+                <Stack spacing={2} direction="row">
+                    <CustomButton1 variant="contained">Login</CustomButton1>
+                    <CustomButton2 variant="contained">SignUp</CustomButton2>
+
+                    {/*<Button variant="contained">Login</Button>*/}
+                    {/*<Button variant="outlined">SignUp</Button>*/}
+                </Stack>
+                {/*<button >Login</button>*/}
+                {/*<button>Signup</button>*/}
             </div>
-        </>
+        </div>
     );
 };
 

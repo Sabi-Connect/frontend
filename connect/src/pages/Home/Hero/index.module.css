@@ -1,0 +1,12 @@
+.her{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+.her1{
+    font-size: 1rem;
+    margin-bottom: 100px;
+}
+.img1{
+    padding-left: 40rem;
+}

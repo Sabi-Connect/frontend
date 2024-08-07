@@ -1,0 +1,27 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: deepskyblue;
+
+}
+.navA{
+    font-weight: bold;
+    color: #F8F8FD;
+    font-size: 24px;
+}
+
+.nav2{
+    display: flex;
+    gap: 2rem;
+    text-align: left;
+    padding-right: 15rem;
+    color: #F8F8FD;
+    font-size: small;
+}
+.btn1{
+    padding: 15px 40px;
+    font-size: large;
+    color: green;
+    /*border-radius: 10px;*/
+    gap: 10px;
+}
