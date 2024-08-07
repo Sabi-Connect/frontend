@@ -1,0 +1,24 @@
+.fot{
+    display: flex;
+    justify-content: space-between;
+    background-color: deepskyblue;
+
+}
+
+.fot1{
+    font-size: larger;
+    font-weight: bold;
+
+}
+.fot2{
+    font-size: larger;
+    font-weight: bold;
+}
+.fot3{
+    font-size: larger;
+    font-weight: bold;
+}
+.fot4{
+    font-size: larger;
+    font-weight: bold;
+}
