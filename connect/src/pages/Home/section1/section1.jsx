@@ -1,5 +1,8 @@
 import React from 'react';
-import img from '../../../assets/img.png'
+import til from '../../../assets/taliologo.jpeg'
+import til1 from '../../../assets/capenterLogo.png'
+import til2 from '../../../assets/photograh.png'
+
 import clean from '../../../assets/cleaning-icons.jpg'
 import elect from '../../../assets/electriciansmybol.jpeg'
 import hair from '../../../assets/hairStyl.png'
@@ -9,6 +12,7 @@ import stylist from '../../../assets/hairstylist.webp'
 import {Box, ButtonBase, Typography} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import style from'./index.module.css'
+import {HiArrowRight} from "react-icons/hi";
 
 
 
@@ -108,61 +112,59 @@ const Section1 = () => {
                 </div>
                 <div className={style.sec}>
                     <div className={style.card}>
-                        <div className={style.img}>
-                            <img src={img} alt="image"/>
-                        </div>
-
+                        <img className={style.img} src={til} alt="design"/>
                         <p className={style.secA}>Fashion Design</p>
-                        <p>available jobs -></p>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
 
                     <div className={style.card}>
-                        <div>
+                    <div>
                             <img className={style.img} src={clean} alt="clean"/>
                         </div>
 
                         <p className={style.secA}>Cleaners</p>
-                        <p>available jobs -></p>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={elect} alt="electrician"/>
-                        <a className={style.secA}>Electrician</a>
-                        <p>available jobs -></p>
+                        <h1 className={style.secA}>Electrician</h1>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={hair} alt="HairStylist"/>
-                        <a className={style.secA}>HairStylist</a>
-                        <p>available jobs -></p>
+                        <h1 className={style.secA}>HairStylist</h1>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
                 </div>
 
                 <div className={style.sec}>
                     <div className={style.card}>
                         <div className={style.img}>
-                            <img src={img} alt="image"/>
+                            <img className={style.img} src={til1} alt="design"/>
                         </div>
 
-                        <p className={style.secA}>Fashion Design</p>
-                        <p>available jobs -></p>
+                        <p className={style.secA}>Carpenter</p>
+                        <p>available jobs <HiArrowRight /></p>
+                        {/*<HiArrowRight />*/}
                     </div>
 
                     <div className={style.card}>
                         <div>
-                            <img className={style.img} src={clean} alt="clean"/>
+                            <img className={style.img} src={til2} alt="clean"/>
                         </div>
 
-                        <p className={style.secA}>Cleaners</p>
-                        <p>available jobs -></p>
+                        <p className={style.secA}>Photographer</p>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={elect} alt="electrician"/>
-                        <a className={style.secA}>Electrician</a>
-                        <p>available jobs -></p>
+                        <h1 className={style.secA}>Electrician</h1>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={hair} alt="HairStylist"/>
-                        <a className={style.secA}>HairStylist</a>
-                        <p>available jobs -></p>
+                        <h1 className={style.secA}>HairStylist</h1>
+                        <p>available jobs <HiArrowRight /></p>
                     </div>
                 </div>
             </div>

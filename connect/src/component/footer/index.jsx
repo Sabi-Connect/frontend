@@ -6,13 +6,13 @@ const Footer = () => {
         <>
             <footer className={style.fot}>
                 <div >
-                    <a className={style.fot1}>Sabi-Connect</a>
+                    <h1 className={style.fot1}>Sabi-Connect</h1>
                     <p className={style.text}>Great platform to connect that
                         both Clients and Skilled workers<br/>
                         to give them a happy ending</p>
                 </div>
                 <div>
-                    <a className={style.fot2}>About</a>
+                    <h1 className={style.fot2}>About</h1>
                     <p >Terms</p>
                     <p >Pricing</p>
                     <p >Advice</p>
@@ -20,14 +20,14 @@ const Footer = () => {
                     <p >Clients</p>
                 </div>
                 <div>
-                    <a className={style.fot3}>Resources</a>
+                    <h1 className={style.fot3}>Resources</h1>
                     <p >Guide</p>
                     <p >Help Docs</p>
                     <p >Contact Us</p>
                     <p >Updates</p>
                 </div>
                 <div>
-                    <a className={style.fot4}>Get job notifications</a>
+                    <h1 className={style.fot4}>Get job notifications</h1>
                     <p >The latest job news articles sent to your inbox everyday</p>
                 </div>
             </footer>

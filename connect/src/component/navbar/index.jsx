@@ -1,5 +1,4 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import style from './index.module.css'
 import {Button, Stack} from "@mui/material";
@@ -22,23 +21,23 @@ const CustomButton2 = styled(Button)(({ theme }) => ({
 }));
 
 
-const SearchField = styled(TextField)({
-    backgroundColor: 'white',
-    borderRadius: '50px',
-    '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: '#B3B3B3',
-            borderRadius: '50px',
-
-        },
-        '&:hover fieldset': {
-            borderColor: '#B3B3B3',
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: '#B3B3B3',
-        }
-    },
-});
+// const SearchField = styled(TextField)({
+//     backgroundColor: 'white',
+//     borderRadius: '50px',
+//     '& .MuiOutlinedInput-root': {
+//         '& fieldset': {
+//             borderColor: '#B3B3B3',
+//             borderRadius: '50px',
+//
+//         },
+//         '&:hover fieldset': {
+//             borderColor: '#B3B3B3',
+//         },
+//         '&.Mui-focused fieldset': {
+//             borderColor: '#B3B3B3',
+//         }
+//     },
+// });
 
 const NavBar = () => {
     return (

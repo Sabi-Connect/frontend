@@ -25,13 +25,14 @@ export const ROUTE = [
             }
         ]
     },
-    {
-        path: "login",
-        element:<Login/>
-    },
+
     {
         path: "sign",
         element:<SignUp/>
+    },
+    {
+        path: "login",
+        element:<Login/>
     },
 
 ]
