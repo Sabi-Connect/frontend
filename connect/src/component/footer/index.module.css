@@ -1,24 +1,26 @@
-.fot{
+.fot {
     display: flex;
     justify-content: space-between;
     background-color: deepskyblue;
-
+    padding: 10px;
 }
 
-.fot1{
-    font-size: larger;
+.fot1, .fot2, .fot3, .fot4 {
+    font-size: 25px;
     font-weight: bold;
+}
 
+.text {
+    font-size: 26px;
+    margin-top: 10px;
 }
-.fot2{
-    font-size: larger;
-    font-weight: bold;
+
+.fot > div {
+    margin-right: 50px;
 }
-.fot3{
-    font-size: larger;
-    font-weight: bold;
-}
-.fot4{
-    font-size: larger;
-    font-weight: bold;
+
+.fot p {
+    font-size: 15px;
+    margin: 9px 0;
+
 }
