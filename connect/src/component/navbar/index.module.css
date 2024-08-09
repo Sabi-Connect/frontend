@@ -2,24 +2,29 @@
     display: flex;
     justify-content: space-between;
     background-color: deepskyblue;
+    padding-top: 5px;
+    height: 60px;
 
 }
 .navA{
     font-weight: bold;
     color: #F8F8FD;
-    font-size: 24px;
+    font-size: 30px;
+    margin-left: 40px;
 }
 
 .nav2{
     display: flex;
-    gap: 2rem;
+    margin-left: 200px;
+    margin-top: 10px;
+    gap: 5rem;
     text-align: left;
     padding-right: 15rem;
     color: #F8F8FD;
-    font-size: small;
+    font-size: 15px;
 }
 .btn1{
-    padding: 15px 40px;
+    padding: 4px 40px 15px 4px;
     font-size: large;
     color: green;
     /*border-radius: 10px;*/

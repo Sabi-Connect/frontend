@@ -7,7 +7,7 @@ const Footer = () => {
             <footer className={style.fot}>
                 <div >
                     <a className={style.fot1}>Sabi-Connect</a>
-                    <p >Great platform to connect that
+                    <p className={style.text}>Great platform to connect that
                         both Clients and Skilled workers<br/>
                         to give them a happy ending</p>
                 </div>

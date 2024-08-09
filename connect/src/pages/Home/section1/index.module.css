@@ -1,0 +1,44 @@
+.main{
+    background-color: #202430;
+
+}
+.head3 h3{
+    color: whitesmoke;
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 40px;
+}
+.sec{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+.card{
+    /*border: 2px solid red;*/
+    border-radius: 4px;
+    height: 205px;
+    width: 220px;
+    background-color: #dce8f4;
+    padding: 25px;
+}
+.secImg1{
+    width: 20px;
+    height: 10px;
+    padding: 10px;
+}
+
+.sec2{
+  /*display: flex;*/
+
+}
+.img{
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+}
+.secA{
+    font-size: large;
+    font-weight: bold;
+    margin-top: 20px;
+}
