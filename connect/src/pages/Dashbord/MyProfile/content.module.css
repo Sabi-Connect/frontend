@@ -1,30 +1,18 @@
-/* Prevent overflow and ensure no content spills outside */
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-
-.content{
-    width: 75%;
+    overflow-x: hidden;
 }
 
 .contentheader{
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*overflow: hidden;*/
-    /*justify-content: space-between;*/
-
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    /*justify-content: normal;*/
-    width: 120%;
-    height: 150vh; /* Ensures the container fits the height of the viewport */
-    /*margin: 0;*/
+    width: 125px;
+    height: 150vh;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 .headertitle{
@@ -34,6 +22,7 @@ body {
     display: flex;
     align-items: center;
     gap: 59%;
+    width: 78vw;
 }
 .searchbox{
     background: #333333;
@@ -83,12 +72,21 @@ body {
 }
 
 .sectionContainer{
+    width: 300px;
     display: flex;
     gap: 30px;
 
 }
 .content2{
-    font-size: 20px;
+
+    font-size: 30px;
+
+}
+
+.base1{
+    width: 600px;
+    flex-direction: row;
+
 }
 
 .formContainer {
@@ -97,9 +95,6 @@ body {
     border-radius: 8px;
     max-width: 400px;
     margin-bottom: 4px;
-
-    /*height: 30px;*/
-    /*margin-left: 167px;*/
 
 }
 
@@ -145,7 +140,7 @@ button:hover {
 }
 
 .formControl {
-    /*width: 100%;*/
+    width: 70vw;
     display: flex;
     justify-content: space-between;
 }
@@ -202,23 +197,25 @@ button:hover {
     margin-left: 800px;
 }
 
-.dviContainer{
-    display: grid;
+/*.dviContainer{*/
+/*    display: grid;*/
 
-}
+/*}*/
 
 .profContainer{
     display: flex;
-    gap: 50px;
+    width: 70vw;
+    /*gap: 150px;*/
     justify-content: space-between;
+    /*margin-right: -320px;*/
 }
 
 .profContainer img {
     max-width: 100%;
     height: auto;
-    border: 1px dashed #aaa;
-    padding: 10px;
-    margin-bottom: 10px;
+    /*border: 1px dashed #aaa;*/
+    /*padding: 10px;*/
+    /*margin-bottom: 10px;*/
 }
 
 .uploadArea {
@@ -255,6 +252,7 @@ button:hover {
     cursor: pointer;
     padding: 0;
     font: inherit;
+    margin: 0;
 }
 
 .linkButton:hover {
@@ -281,7 +279,9 @@ button:hover {
 .personContainer{
     display: flex;
     justify-content: space-between;
-    /*border: 1px solid #ccc;*/
+    width: 70vw;
+    /*margin-left: 150px; */
+
 
 }
 
@@ -304,7 +304,7 @@ button:hover {
 .phoneContainer input, .emailContainer,
 .phoEmail > div input {
     width: 200px;
-    padding: 8px;
+    /*padding: 8px;*/
     box-sizing: border-box;
     font-size: 14px;
     height: 40px;
@@ -323,15 +323,19 @@ button:hover {
 
 .formContainer select {
     width: 300px; /* Set the same width for select dropdowns */
-    padding: 8px; /* Adjust padding for consistency */
+    padding: 8px;
     box-sizing: border-box;
 
 }
 
 .fileInput {
-    display: none; /* Hides the file input */
+    display: none;
 }
 
 .uploadLabel {
-    cursor: pointer; /* Makes the label look clickable */
+    cursor: pointer;
+}
+
+.buttonstyle{
+    color: #45a049;
 }

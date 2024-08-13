@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import style from '../content/content.module.css'
+import style from './content.module.css'
 import {useNavigate} from "react-router-dom";
 import igmIc from "../../../assets/imageiconR.png";
 import crop from "../../../assets/skilledcrop.jpg"
@@ -91,6 +91,7 @@ const ContentHeader = () => {
     };
 
     const navigate = useNavigate();
+
     return (
         <div className={style.contentheader}>
             <div className={style.sectionContainer}>
@@ -98,7 +99,7 @@ const ContentHeader = () => {
                 <p>Login Details</p>
                 <p>Notification</p>
             </div>
-            <div>
+            <div className={style.base1}>
                 <h2 className={style.content2}>Basic information</h2>
                 <p>This is your personal information that you can update anytime.</p>
             </div>
@@ -122,13 +123,15 @@ const ContentHeader = () => {
                                 accept="image/*"
                             />
                             <label htmlFor="fileInput" className={style.uploadLabel}>
-                                <img className={style.uploadIcon} src={igmIc} alt="Profile"/>
-                                <p className={style.linkButton}><button href="#" onClick={handleClick}>Click to
-                                    replace</button> or
+                                    <img className={style.uploadIcon} src={igmIc} alt="Profile"/>
+                                <p className={style.linkButton}><a href="#" onClick={handleClick}> <span
+                                    className={style.buttonstyle}>Click to
+                                    replace</span></a> or
                                     drag and drop<br/>SVG, PNG, JPG
                                     or GIF (max. 400 x 400px)
                                 </p>
                             </label>
+
                         </div>
                     </div>
                 </div>
@@ -254,8 +257,7 @@ const ContentHeader = () => {
                                         label={
                                             <div className={style.labelContainer}>
                                                 <h1 className={style.labelTitle}>Client</h1>
-                                                <p className={style.labelDescription}>Hiring, sourcing candidates, or
-                                                    posting a
+                                                <p className={style.labelDescription}>Hiring, sourcing candidates
                                                     job</p>
                                             </div>
                                         }

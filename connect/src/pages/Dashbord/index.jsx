@@ -1,14 +1,13 @@
 import React from 'react';
-import Profile from "./profile/profile";
-import Content from "./content/content";
-import Dashboard from "./dashboard/setting";
+import Dashboard from "./dashboard/dashboard";
 import style from './index.module.css'
+import ContentHeader from "./MyProfile/contentheader";
 const MyDashboard = () => {
     return (
         <div className={style.dashboard}>
             <Dashboard/>
             <div className={style.dashboardContent}>
-                <Content/>
+                <ContentHeader/>
             </div>
         </div>
     );

@@ -2,9 +2,8 @@ import SignUp from "../pages/SignupPg/signup";
 import Login from "../pages/LoginPg/login";
 import Layout from "../component/layout";
 import Home from "../pages/Home";
-import Jobs from "../pages/Jobs";
-import Settings from "../pages/Dashbord/dashboard/setting";
 import MyDashboard from "../pages/Dashbord";
+import Pages from "../pages";
 
 
 
@@ -19,16 +18,16 @@ export const ROUTE = [
             }
         ]
     },
-    {
-        path:"/jobs",
-        element: <Layout/>,
-        children:[
-            {
-                path: "",
-                element:<Jobs/>
-            }
-        ]
-    },
+    // {
+    //     path:"/jobs",
+    //     element: <Layout/>,
+    //     // children:[
+    //     //     {
+    //     //         path: "",
+    //     //         element:<Jobs/>
+    //     //     }
+    //     // ]
+    // },
 
     {
         path: "sign",
@@ -40,7 +39,16 @@ export const ROUTE = [
     },
     {
         path: "setting",
-        element: <MyDashboard/>
-    }
+        element: <Pages/>,
+        children: [
+            {
+                path: "dashboard",
+                element: <MyDashboard/>
+            }
+
+
+
+        ]
+    },
 
 ]

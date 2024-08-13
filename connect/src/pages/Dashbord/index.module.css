@@ -7,20 +7,21 @@
     background: #dce8f4;
     flex: 1;
     border-radius: 20px;
-    padding: 2rem;
+    padding: 6px;
     display: flex;
     gap: 1.5rem;
     justify-content:space-between ;
-    width: 200px;
-    height: 500%;
+    width: 5px;
+    height: 30%;
+    /*margin-right: 120px;*/
 }
 
-.content {
-    flex: 3;
-    padding: 10px;
-}
+/*.content {*/
+/*    flex: 3;*/
+/*    padding: 10px;*/
+/*}*/
 
-.profile {
-    flex: 1;
-    padding: 10px;
-}
+/*.profile {*/
+/*    flex: 1;*/
+/*    padding: 10px;*/
+/*}*/
