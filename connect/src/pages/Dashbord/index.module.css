@@ -1,0 +1,26 @@
+.dashboard{
+    display: flex;
+    gap: 20px;
+}
+
+.dashboardContent{
+    background: #dce8f4;
+    flex: 1;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content:space-between ;
+    width: 200px;
+    height: 500%;
+}
+
+.content {
+    flex: 3;
+    padding: 10px;
+}
+
+.profile {
+    flex: 1;
+    padding: 10px;
+}

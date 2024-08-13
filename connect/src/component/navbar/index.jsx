@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import style from './index.module.css'
 import {Button, Stack} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const CustomButton1 = styled(Button)(({ theme }) => ({
     backgroundColor: '#33FF57',
@@ -40,6 +41,7 @@ const CustomButton2 = styled(Button)(({ theme }) => ({
 // });
 
 const NavBar = () => {
+    const navigate = useNavigate();
     return (
         <div className={style.nav}>
             <div className={style.navA}>
@@ -64,8 +66,8 @@ const NavBar = () => {
 
             <div className={style.btn1}>
                 <Stack spacing={2} direction="row">
-                    <CustomButton1 variant="contained">Login</CustomButton1>
-                    <CustomButton2 variant="contained">SignUp</CustomButton2>
+                    <CustomButton1 variant="contained" onClick={() => navigate('/login')}>Login</CustomButton1>
+                    <CustomButton2 variant="contained" onClick={() => navigate('/sign')}>SignUp</CustomButton2>
 
                     {/*<Button variant="contained">Login</Button>*/}
                     {/*<Button variant="outlined">SignUp</Button>*/}
