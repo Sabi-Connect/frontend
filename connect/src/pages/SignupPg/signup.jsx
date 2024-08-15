@@ -1,8 +1,9 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import {Button} from "@mui/material";
 import {HiArrowLeft} from "react-icons/hi";
+import style from './index.module.css'
 const SignUp = () => {
     const [form, setForm] = useState({
         email: '',
@@ -33,19 +34,19 @@ const SignUp = () => {
 
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 relative">
+        <div className={style.signupContainer}>
             <div className="absolute top-4 left-4">
                 <button
-                    onClick={() => navigate('/signUp')}
-                    className="flex items-center text-green-600 hover:text-green-400"
+                    onClick={() => navigate('/')}
+                    className={style.backButton}
                 >
-                    <HiArrowLeft className="mr-2" /> Back
+                    <HiArrowLeft /> Back
                 </button>
             </div>
-            <div className="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
-                <h2 className="text-2xl font-semibold text-center mb-6">SignUp</h2>
+            <div className={style.signForm}>
+                <h2 >SignUp</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
+                    <div className={style.formField}>
                         <TextField
                             label="First Name"
                             variant="outlined"
@@ -57,7 +58,7 @@ const SignUp = () => {
                             sx={roundedStyle}
                         />
                     </div>
-                    <div className="mb-4">
+                    <div className={style.formField}>
                         <TextField
                             label="Last Name"
                             variant="outlined"
@@ -69,7 +70,7 @@ const SignUp = () => {
                             sx={roundedStyle}
                         />
                     </div>
-                    <div className="mb-4">
+                    <div className={style.formField}>
                         <TextField
                             label="Email"
                             variant="outlined"
@@ -81,7 +82,7 @@ const SignUp = () => {
                             sx={roundedStyle}
                         />
                     </div>
-                    <div className="mb-4">
+                    <div className={style.formField}>
                         <TextField
                             label="Password"
                             variant="outlined"
@@ -93,23 +94,33 @@ const SignUp = () => {
                             sx={roundedStyle}
                         />
                     </div>
-                    <div className="mt-6">
+                    <div className={style.formField}>
                         <Button
                             type="submit"
                             variant="contained"
                             fullWidth
                             sx={{
-                                backgroundColor: 'green',
+                                backgroundColor: '#2b8fda',
                                 color: 'white',
                                 paddingY: 2,
                                 borderRadius: '9999px',
                                 '&:hover': {
-                                    backgroundColor: 'darkgreen',
+                                    backgroundColor: '',
+
                                 },
+
                             }}
+                            className={style.signButton}
                         >
                             SignUp
                         </Button>
+                        <div>
+                            <p>Already have an Account? <button className={style.but}  onClick={() => navigate('/login')}
+                            >Login</button>
+                            </p>
+                            <p>By clicking 'SignUp', you acknowledge that you have read and accept the <span className={style.terms}>Terms of Service</span>    and <span className={style.terms}> Privacy Policy</span> .</p>
+                        </div>
+
                     </div>
                 </form>
             </div>
