@@ -80,7 +80,7 @@ const Login = () => {
                                     paddingY: 2,
                                     borderRadius: '9999px',
                                     '&:hover': {
-                                        backgroundColor: '#2b8fda',
+                                        backgroundColor: '',
                                     },
                                 }}
                             >
@@ -93,7 +93,7 @@ const Login = () => {
                     </FormGroup>
 
                     <div>
-                        <p>Don't have an Account? <button onClick={() => navigate('/sign')}
+                        <p>Don't have an Account? <button className={style.butts} onClick={() => navigate('/sign')}
                         >SignUp</button>
                         </p>
                     </div>

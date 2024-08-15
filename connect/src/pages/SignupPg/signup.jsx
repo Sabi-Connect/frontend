@@ -100,12 +100,12 @@ const SignUp = () => {
                             variant="contained"
                             fullWidth
                             sx={{
-                                backgroundColor: 'blue',
+                                backgroundColor: '#2b8fda',
                                 color: 'white',
                                 paddingY: 2,
                                 borderRadius: '9999px',
                                 '&:hover': {
-                                    backgroundColor: 'blue',
+                                    backgroundColor: '',
 
                                 },
 
@@ -115,7 +115,7 @@ const SignUp = () => {
                             SignUp
                         </Button>
                         <div>
-                            <p>Already have an Account? <button  onClick={() => navigate('/login')}
+                            <p>Already have an Account? <button className={style.but}  onClick={() => navigate('/login')}
                             >Login</button>
                             </p>
                             <p>By clicking 'SignUp', you acknowledge that you have read and accept the <span className={style.terms}>Terms of Service</span>    and <span className={style.terms}> Privacy Policy</span> .</p>
