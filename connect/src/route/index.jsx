@@ -10,6 +10,7 @@ import CancelAppointment from "../pages/Dashbord/appoint/cancelApp/cancelApp";
 import ViewAllAppointments from "../pages/Dashbord/appoint/viewApp/viewApp";
 import UpdateAppointment from "../pages/Dashbord/appoint/updateApp/updateApp";
 import WorkerProfiles from "../pages/Dashbord/catigory/imageCategory";
+import AppointmentManager from "../pages/Dashbord/appointmanager/appointmentmanager";
 
 
 
@@ -72,6 +73,10 @@ export const ROUTE = [
         element: <WorkerProfiles/>
 
     },
+    {
+        path:"/appMan",
+        element: <AppointmentManager/>
+    }
 
 ]
 

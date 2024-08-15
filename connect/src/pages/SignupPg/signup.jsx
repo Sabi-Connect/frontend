@@ -100,12 +100,12 @@ const SignUp = () => {
                             variant="contained"
                             fullWidth
                             sx={{
-                                backgroundColor: 'green',
+                                backgroundColor: 'blue',
                                 color: 'white',
                                 paddingY: 2,
                                 borderRadius: '9999px',
                                 '&:hover': {
-                                    backgroundColor: 'darkgreen',
+                                    backgroundColor: 'blue',
 
                                 },
 

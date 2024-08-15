@@ -50,7 +50,7 @@
 }
 
 .loginButton {
-    background-color: green;
+    background-color: dodgerblue;
     color: white;
     padding: 12px 0;
     border-radius: 9999px;
@@ -60,9 +60,9 @@
 }
 
 .signButton:hover {
-    background-color: darkgreen;
+    background-color: dodgerblue;
 }
 
 .terms{
-    color: blue;
+    color: dodgerblue;
 }

@@ -19,7 +19,7 @@ const CancelAppointment = ({ appointments, removeAppointment }) => {
             <h2>Cancel Appointment</h2>
             <select onChange={(e) => setId(e.target.value)}>
                 <option value="">Select Appointment</option>
-                {Array.isArray(appointments) && appointments.map(app => ( // Check if appointments is an array
+                {Array.isArray(appointments) && appointments.map(app => (
                     <option key={app.id} value={app.id}>{app.title} on {app.date}</option>
                 ))}
             </select>

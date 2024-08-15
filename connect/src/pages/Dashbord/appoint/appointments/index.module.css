@@ -1,3 +1,70 @@
+.scrollWatcher{
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #26A4FF;
+    width: 100%;
+    border-radius: 20px;
+    scale: 0 1;
+    animation: scrollWatcher linear;
+    animation-timeline:  scroll();
+}
+
+@keyframes scrollWatcher {
+    to{ scale: 1 1;}
+}
+
+.bannerImage{
+    height: 45vh;
+    width: 98vw;
+}
+.logoH1{
+    font-size: 14px;
+}
+
+.mainBody{
+
+}
+.leftTexted{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 45px;
+    padding-top: 30px;
+    background-color: #e0f2ff;
+    padding-bottom: 30px;
+}
+.leftTexted div{
+    padding-left: 195px;
+    padding-top: 95px;
+}
+.leftTexted img{
+    height: 445px;
+    width: 445px;
+    border-radius: 15px;
+    margin-left: 30px;
+}
+
+.rightTexted{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 45px;
+    padding-bottom: 20px;
+}
+.rightTexted div{
+    padding-left: 35px;
+    padding-top: 95px;
+}
+.rightTexted img{
+    height: 445px;
+    width: 445px;
+    border-radius: 15px;
+    margin-left: 100px;
+}
+
+
+
+
 /*body {*/
 /*    margin: 0;*/
 /*    font-family: Arial, sans-serif;*/

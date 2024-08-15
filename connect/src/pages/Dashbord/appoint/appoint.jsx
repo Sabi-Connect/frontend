@@ -6,7 +6,7 @@ import style from './index.module.css'
 const Appoint = () => {
     return (
         <div className={style.appointty}>
-            <Dashboard/>
+            {/*<Dashboard/>*/}
             <div>
                 <Appointment/>
             </div>

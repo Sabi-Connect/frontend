@@ -13,6 +13,7 @@ import {Box, ButtonBase, Typography} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import style from'./index.module.css'
 import {HiArrowRight} from "react-icons/hi";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -103,6 +104,8 @@ const ImageMarked = styled('span')(({ theme }) => ({
 }));
 
 const Section1 = () => {
+    const navigate = useNavigate();
+
     return (
         <div className={style.main}>
 
@@ -114,7 +117,7 @@ const Section1 = () => {
                     <div className={style.card}>
                         <img className={style.img} src={til} alt="design"/>
                         <p className={style.secA}>Fashion Design</p>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                     </div>
 
                     <div className={style.card}>
@@ -123,17 +126,17 @@ const Section1 = () => {
                         </div>
 
                         <p className={style.secA}>Cleaners</p>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={elect} alt="electrician"/>
                         <h1 className={style.secA}>Electrician</h1>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={hair} alt="HairStylist"/>
                         <h1 className={style.secA}>HairStylist</h1>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                     </div>
                 </div>
 
@@ -144,7 +147,7 @@ const Section1 = () => {
                         </div>
 
                         <p className={style.secA}>Carpenter</p>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                         {/*<HiArrowRight />*/}
                     </div>
 
@@ -154,17 +157,17 @@ const Section1 = () => {
                         </div>
 
                         <p className={style.secA}>Photographer</p>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={elect} alt="electrician"/>
                         <h1 className={style.secA}>Electrician</h1>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs  <HiArrowRight onClick={() => navigate('/book')} /></p>
                     </div>
                     <div className={style.card}>
                         <img className={style.img} src={hair} alt="HairStylist"/>
                         <h1 className={style.secA}>HairStylist</h1>
-                        <p>available jobs <HiArrowRight /></p>
+                        <p>available jobs <HiArrowRight onClick={() => navigate('/book')}/></p>
                     </div>
                 </div>
             </div>

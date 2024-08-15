@@ -8,7 +8,7 @@ const CustomButton1 = styled(Button)(({ theme }) => ({
     backgroundColor: '#33FF57',
     color: '#fff',
     '&:hover': {
-        backgroundColor: '#FF3D20',
+        backgroundColor: '#1531e7',
     },
 }));
 
@@ -21,24 +21,6 @@ const CustomButton2 = styled(Button)(({ theme }) => ({
     },
 }));
 
-
-// const SearchField = styled(TextField)({
-//     backgroundColor: 'white',
-//     borderRadius: '50px',
-//     '& .MuiOutlinedInput-root': {
-//         '& fieldset': {
-//             borderColor: '#B3B3B3',
-//             borderRadius: '50px',
-//
-//         },
-//         '&:hover fieldset': {
-//             borderColor: '#B3B3B3',
-//         },
-//         '&.Mui-focused fieldset': {
-//             borderColor: '#B3B3B3',
-//         }
-//     },
-// });
 
 const NavBar = () => {
     const navigate = useNavigate();
@@ -68,12 +50,12 @@ const NavBar = () => {
                 <Stack spacing={2} direction="row">
                     <CustomButton1 variant="contained" onClick={() => navigate('/login')}>Login</CustomButton1>
                     <CustomButton2 variant="contained" onClick={() => navigate('/sign')}>SignUp</CustomButton2>
+                    <CustomButton2 variant="contained" onClick={() => navigate('/book')}>Book Appointment</CustomButton2>
 
                     {/*<Button variant="contained">Login</Button>*/}
                     {/*<Button variant="outlined">SignUp</Button>*/}
                 </Stack>
-                {/*<button >Login</button>*/}
-                {/*<button>Signup</button>*/}
+
             </div>
         </div>
     );

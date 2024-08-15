@@ -1,63 +1,99 @@
-import React, {useState} from 'react';
-import './index.module.css'
+import React, {useEffect, useState} from 'react';
+import styles from './index.module.css';
+import Category from './category/Category';
+import SKillCard from './skillCard/SKillCard';
+import { categories, electricalDetails } from '../../../../constants/Constants';
+import { plumberDetails } from '../../../../constants/plumber';
+// import category from "./category/Category";
+import {useNavigate} from "react-router-dom";
 
-const dummyAppointments = [
-    { id: 1, title: "Check-up", date: "2023-10-01" },
-    { id: 2, title: "Consultation", date: "2023-10-15" },
-];
+// const categoryDataMap = {
+//     electrical: electricalDetails,
+//     plumbing: plumberDetails,
+// };
 
-const categories = [
-    'ELECTRICAL',
-    'PLUMBING',
-    'BEAUTY_CARE',
-    'CARPENTRY',
-    'FASHION',
-    'PHOTOGRAPHY',
-];
+
 
 const BookAppointment = ({ addAppointment }) => {
+    const navigate = useNavigate();
+
+
+
     const [title, setTitle] = useState('');
-    const [date, setDate] = useState('');
-    const [category, setCategory] = useState('');
+
+    const [dateTime, setDateTime] = useState('');
+    const [currentCategory, setCurrentCategory] = useState('');
+
+    useEffect(() => {
+        // console.log(currentCategory)
+    }, [currentCategory]);
 
     const handleSubmit = () => {
-        if (title && date && category) {
-            addAppointment({ id: Math.random(), title, date,category });
+        if (title && dateTime && currentCategory) {
+            addAppointment({ id: Math.random(), title, dateTime, category: currentCategory });
             alert('Appointment Booked');
-        }else {
+        } else {
             alert('Please fill in all fields');
         }
     };
+    const SkillDisplay =({details = []})=>{
+        return<>
+            {
+                details.map(( detail, index)=>(
+                    <SKillCard
+                        key = {index}
+                        skill={detail.skill}
+                        image={detail.image}
+                        name={detail.name}
+                        description={detail.description}/>
+                ))
+            }
+        </>
+    }
+
     return (
-        <div>
+        <div className={styles.mainBody}>
             <h2>Book Appointment</h2>
-            {/*<input*/}
-            {/*    type="text"*/}
-            {/*    placeholder="Title"*/}
-            {/*    value={title}*/}
-            {/*    onChange={(e) => setTitle(e.target.value)}*/}
-            {/*/>*/}
-            <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-            />
-            <select
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-            >
-                <option value="">Select Category</option>
-                {categories.map((cat, index) => (
-                    <option key={index} value={cat}>
-                        {cat.replace('_', ' ')}
-                    </option>
-                ))}
-            </select>
-            <button onClick={handleSubmit}>Submit</button>
-            {/*<h2>Book Appointment</h2>*/}
-            {/*<input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>*/}
-            {/*<input type="date" value={date} onChange={(e) => setDate(e.target.value)}/>*/}
-            {/*<button onClick={handleSubmit}>Submit</button>*/}
+            <div className={styles.body}>
+                <div className={styles.left}>
+                    {categories.map((category) => (
+                        <Category
+                            key={category}
+                            categoryName={category}
+                            click={() => setCurrentCategory(category)}
+                        />
+                    ))}
+                </div>
+                {/*<div className={styles.left}>*/}
+                {/*    {categories.map((category) => (*/}
+                {/*        <Category categoryName={category} click={(currentCategory) => {*/}
+                {/*            setCurrentCategory(category)*/}
+                {/*        }}/>*/}
+                {/*    ))}*/}
+
+                {/*</div>*/}
+
+                <div className={styles.right}>
+
+                    {currentCategory === "ELECTRICAL" ? (
+                        <SkillDisplay details={electricalDetails}/>
+                    ) : currentCategory === "PLUMBING" ? (
+                        <SkillDisplay details={plumberDetails}/>
+                    ) : null}
+                    <button onClick={() => navigate('/')}>Back to Home</button>
+                </div>
+
+                {/*<div className={styles.right}>*/}
+                {/*    {*/}
+                {/*        currentCategory && currentCategory*/}
+                {/*    }*/}
+                {/*    {*/}
+                {/*        currentCategory === "ELECTRICAL" ? <SkillDisplay details={electricalDetails}/> : "PLUMBING" ? <SkillDisplay details={electricalDetails}/> :*/}
+                {/*    }*/}
+                {/*</div>*/}
+
+            </div>
+
         </div>
     );
 };
