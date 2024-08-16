@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <>
-            <footer className={}>
+            <footer>
                 <div>
                     <a className={`font-semibold text-3xl`}>Sabi-Connect</a>
                     <p className={`text-sm`}>Great platform to connect that
