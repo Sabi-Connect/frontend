@@ -13,14 +13,6 @@ const Footer = () => {
                     </p>
                 </div>
 
-
-                <div>
-                    <a className={`font-semibold text-3xl`}>Sabi-Connect</a>
-                    <p className={`text-sm`}>Great platform to connect that
-                        both Clients and Skilled workers
-
-                        to give them a happy ending</p>
-                </div>
                 <div>
                     <h1 className={style.fot2}>About</h1>
                     <p>Terms</p>
