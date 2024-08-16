@@ -17,6 +17,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    margin-right: 330px;
 
 
 }
@@ -69,4 +70,10 @@
 
 .but:hover{
     background-color: #26A4FF;
+}
+
+.signT{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: -200px;
 }

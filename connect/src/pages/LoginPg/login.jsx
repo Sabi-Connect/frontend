@@ -80,7 +80,7 @@ const Login = () => {
                                     paddingY: 2,
                                     borderRadius: '9999px',
                                     '&:hover': {
-                                        backgroundColor: '',
+                                        backgroundColor: '#2b8fda',
                                     },
                                 }}
                             >
