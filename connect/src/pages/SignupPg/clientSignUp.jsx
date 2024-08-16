@@ -7,7 +7,7 @@ import style from './client.module.css'
 import signup from '../../assets/signhen.avif'
 import * as Yup from "yup";
 import {Formik, ErrorMessage as FormikErrorMessage} from 'formik';
-import {signupApi, skillWorkerApi} from "../../component/api";
+import {clientSignupApi, signupApi, skillWorkerApi} from "../../component/api";
 
 
 const ClientSignUp = () => {
