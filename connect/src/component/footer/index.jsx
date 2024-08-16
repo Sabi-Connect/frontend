@@ -1,33 +1,42 @@
 import React from 'react';
+import style from './index.module.css'
 
 const Footer = () => {
     return (
         <>
-            <footer>
-                <div>
-                    <a className={`font-semibold text-3xl`}>Sabi-Connect</a>
-                    <p className={`text-sm`}>Great platform to connect that
-                        both Clients and Skilled workers
+{/*<<<<<<< HEAD*/}
+{/*            <footer>*/}
+{/*                <div>*/}
+{/*                    <a className={`font-semibold text-3xl`}>Sabi-Connect</a>*/}
+{/*                    <p className={`text-sm`}>Great platform to connect that*/}
+{/*                        both Clients and Skilled workers*/}
+{/*=======*/}
+            <footer className={style.fot}>
+                <div >
+                    <h1 className={style.fot1}>Sabi-Connect</h1>
+                    <p className={style.text}>Great platform to connect that
+                        both Clients and Skilled workers<br/>
+{/*>>>>>>> origin/main*/}
                         to give them a happy ending</p>
                 </div>
                 <div>
-                    <a className={`font-semibold text-3xl`}>About</a>
-                    <p className={`text-sm`}>Terms</p>
-                    <p className={`text-sm`}>Pricing</p>
-                    <p className={`text-sm`}>Advice</p>
-                    <p className={`text-sm`}>Privacy Policy</p>
-                    <p className={`text-sm`}>Clients</p>
+                    <h1 className={style.fot2}>About</h1>
+                    <p >Terms</p>
+                    <p >Pricing</p>
+                    <p >Advice</p>
+                    <p >Privacy Policy</p>
+                    <p >Clients</p>
                 </div>
                 <div>
-                    <a className={`font-semibold text-3xl`}>Resources</a>
-                    <p className={`text-sm`}>Guide</p>
-                    <p className={`text-sm`}>Help Docs</p>
-                    <p className={`text-sm`}>Contact Us</p>
-                    <p className={`text-sm`}>Updates</p>
+                    <h1 className={style.fot3}>Resources</h1>
+                    <p >Guide</p>
+                    <p >Help Docs</p>
+                    <p >Contact Us</p>
+                    <p >Updates</p>
                 </div>
                 <div>
-                    <a className={`font-semibold text-3xl`}>Get job notifications</a>
-                    <p className={`text-sm`}>The latest job news articles sent to your inbox everyday</p>
+                    <h1 className={style.fot4}>Get job notifications</h1>
+                    <p >The latest job news articles sent to your inbox everyday</p>
                 </div>
             </footer>
         </>
