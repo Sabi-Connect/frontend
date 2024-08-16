@@ -26,10 +26,10 @@ const Login = () => {
             .required('Email Address is required'),
     });
 
-    // const [form, setForm] = useState({
-    //     email: '',
-    //     password: '',
-    // });
+    const [form, setForm] = useState({
+        username: '',
+        password: '',
+    });
 
     const initialValues = {
         username: '',
@@ -38,16 +38,16 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    // const handleChange = (e) => {
-    //     const { name, value, type, checked } = e.target;
-    //     setForm({
-    //         ...form,
-    //         [name]: type === 'checkbox' ? checked : value
-    //     });
-    // };
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setForm({
+            ...form,
+            [name]: type === 'checkbox' ? checked : value
+        });
+    };
 
 
-    const handleSubmit = async (values, e) => {
+    const handleSubmit = async (values) => {
         setLoading(true);
         setErrorMessage('');
 
@@ -80,11 +80,11 @@ const Login = () => {
         }
 
 
-        e.preventDefault();
+        // e.preventDefault();
     };
-    // const togglePasswordVisibility = () => {
-    //     setShowPassword(!showPassword);
-    // };
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     useEffect(() => {
         if (errorMessage) {
@@ -122,7 +122,7 @@ const Login = () => {
                 )}
             </div>
             <Formik
-                initialValues={initialValues}
+                initialValues={{username: '', password: ''}}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
             >
@@ -142,13 +142,13 @@ const Login = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className={style.formField}>
                                     <TextField
-                                        label="Email"
+                                        label="Username"
                                         variant="outlined"
                                         fullWidth
-                                        type="email"
-                                        name="email"
-                                        value={initialValues.email}
-                                        // onChange={handleChange}
+                                        type="username"
+                                        name="username"
+                                        value={form.username}
+                                        onChange={handleChange}
                                         sx={roundedStyle}
                                     />
                                     <FormikErrorMessage name="username" component="div"
@@ -159,12 +159,15 @@ const Login = () => {
                                         label="Password"
                                         variant="outlined"
                                         fullWidth
-                                        type="password"
+                                        type={showPassword ? 'text' : 'password'}
                                         name="password"
-                                        value={initialValues.password}
-                                        // onChange={handleChange}
+                                        value={form.password}
+                                        onChange={handleChange}
                                         sx={roundedStyle}
                                     />
+                                    <Button onClick={togglePasswordVisibility}>
+                                        {showPassword ? 'Hide' : 'Show'}
+                                    </Button>
 
                                     <FormikErrorMessage name="password" component="div"
                                                         className="text-red-500 text-sm"/>

@@ -1,4 +1,4 @@
-import SignUp from "../pages/SignupPg/signup";
+import ClientSignUp from "../pages/SignupPg/clientSignUp";
 import Login from "../pages/LoginPg/login";
 import Layout from "../component/layout";
 import Home from "../pages/Home";
@@ -11,6 +11,7 @@ import ViewAllAppointments from "../pages/Dashbord/appoint/viewApp/viewApp";
 import UpdateAppointment from "../pages/Dashbord/appoint/updateApp/updateApp";
 import WorkerProfiles from "../pages/Dashbord/catigory/imageCategory";
 import AppointmentManager from "../pages/Dashbord/appointmanager/appointmentmanager";
+import SkilledWorkerSignUp from "../pages/skilledworker/skilled";
 
 
 
@@ -37,15 +38,19 @@ export const ROUTE = [
     // },
 
     {
-        path: "sign",
-        element:<SignUp/>
+        path: "client",
+        element:<ClientSignUp/>
+    },
+    {
+        path: "skilWok",
+        element:<SkilledWorkerSignUp/>
     },
     {
         path: "login",
         element:<Login/>
     },
     {
-        path: "setting",
+        path: "dashboard",
         element: <MyDashboard/>,
     },
     {

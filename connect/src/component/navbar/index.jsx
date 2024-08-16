@@ -5,7 +5,7 @@ import {Button, Stack} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
 const CustomButton1 = styled(Button)(({ theme }) => ({
-    backgroundColor: '#33FF57',
+    backgroundColor: '#1531e7',
     color: '#fff',
     '&:hover': {
         backgroundColor: '#1531e7',
@@ -13,11 +13,11 @@ const CustomButton1 = styled(Button)(({ theme }) => ({
 }));
 
 const CustomButton2 = styled(Button)(({ theme }) => ({
-    borderColor: '#33FF57',
+    borderColor: '#1531e7',
     color: '#fff',
     '&:hover': {
-        borderColor: '#28CC47',
-        color: '#28CC47',
+        borderColor: '#1531e7',
+        color: '#fff',
     },
 }));
 
@@ -49,8 +49,11 @@ const NavBar = () => {
             <div className={style.btn1}>
                 <Stack spacing={2} direction="row">
                     <CustomButton1 variant="contained" onClick={() => navigate('/login')}>Login</CustomButton1>
-                    <CustomButton2 variant="contained" onClick={() => navigate('/sign')}>SignUp</CustomButton2>
+                    <CustomButton2 variant="contained" onClick={() => navigate('/skilWok')}>Sign up as skilledworker</CustomButton2>
+                    <CustomButton2 variant="contained" onClick={() => navigate('/client')}>Sign up as client</CustomButton2>
                     <CustomButton2 variant="contained" onClick={() => navigate('/book')}>Book Appointment</CustomButton2>
+
+
 
                     {/*<Button variant="contained">Login</Button>*/}
                     {/*<Button variant="outlined">SignUp</Button>*/}
