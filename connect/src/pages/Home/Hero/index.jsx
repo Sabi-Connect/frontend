@@ -395,7 +395,7 @@ const Hero = () => {
             <div className={style.heroInner}>
                 <div className={style.heroText}>
                     <h1 className={style.her2}>Discover more than 5000 <span className={style.her4}> skilled workers</span></h1>
-                    <p className={style.her1}>Great platform for job seekers searching for new career heights and passionate about startups.</p>
+                    <p className={style.her1}>Great platform for job seekers searching for new career heights and passionate about making people happy.</p>
                     <Button
                         variant="contained"
                         sx={{
