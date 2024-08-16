@@ -5,7 +5,7 @@
 // import pic2 from '../../../assets/barber.jpg';
 // import pic3 from '../../../assets/plumb1.jpeg';
 //
-// import style from './index.module.css';
+// import style from './client.module.css';
 // import { Button } from "@mui/material";
 //
 //
@@ -437,64 +437,6 @@ const Hero = () => {
                     <DirectionsIcon />
                 </IconButton>
             </Paper>
-
-            <Autocomplete
-                id="google-map-demo"
-                sx={{ width: 300 }}
-                getOptionLabel={(option) =>
-                    typeof option === 'string' ? option : option.description
-                }
-                filterOptions={(x) => x}
-                options={options}
-                autoComplete
-                includeInputInList
-                filterSelectedOptions
-                value={value}
-                noOptionsText="No locations"
-                onChange={(event, newValue) => {
-                    setOptions(newValue ? [newValue, ...options] : options);
-                    setValue(newValue);
-                }}
-                onInputChange={(event, newInputValue) => {
-                    setInputValue(newInputValue);
-                }}
-                renderInput={(params) => (
-                    <TextField {...params} label="Add a location" fullWidth />
-                )}
-                renderOption={(props, option) => {
-                    const { key, ...optionProps } = props;
-                    const matches =
-                        option.structured_formatting.main_text_matched_substrings || [];
-
-                    const parts = parse(
-                        option.structured_formatting.main_text,
-                        matches.map((match) => [match.offset, match.offset + match.length]),
-                    );
-                    return (
-                        <li key={key} {...optionProps}>
-                            <Grid container sx={{ alignItems: 'center' }}>
-                                <Grid item sx={{ display: 'flex', width: 44 }}>
-                                    <LocationOnIcon sx={{ color: 'text.secondary' }} />
-                                </Grid>
-                                <Grid item sx={{ width: 'calc(100% - 44px)', wordWrap: 'break-word' }}>
-                                    {parts.map((part, index) => (
-                                        <Box
-                                            key={index}
-                                            component="span"
-                                            sx={{ fontWeight: part.highlight ? 'bold' : 'regular' }}
-                                        >
-                                            {part.text}
-                                        </Box>
-                                    ))}
-                                    <Typography variant="body2" color="text.secondary">
-                                        {option.structured_formatting.secondary_text}
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </li>
-                    );
-                }}
-            />
         </div>
     );
 };

@@ -4,8 +4,8 @@ import Category from './category/Category';
 import SKillCard from './skillCard/SKillCard';
 import { categories, electricalDetails } from '../../../../constants/Constants';
 import { plumberDetails } from '../../../../constants/plumber';
-// import category from "./category/Category";
 import {useNavigate} from "react-router-dom";
+import {bookingApi, skillWorkerApi} from "../../../../component/api";
 
 // const categoryDataMap = {
 //     electrical: electricalDetails,
@@ -20,22 +20,78 @@ const BookAppointment = ({ addAppointment }) => {
 
 
     const [title, setTitle] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [dateTime, setDateTime] = useState('');
     const [currentCategory, setCurrentCategory] = useState('');
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         // console.log(currentCategory)
     }, [currentCategory]);
 
-    const handleSubmit = () => {
-        if (title && dateTime && currentCategory) {
-            addAppointment({ id: Math.random(), title, dateTime, category: currentCategory });
-            alert('Appointment Booked');
-        } else {
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!title || !dateTime || !currentCategory) {
             alert('Please fill in all fields');
+            return;
         }
+
+        const values = {
+            title,
+            dateTime,
+            category: currentCategory,
+            userId: localStorage.getItem('userId'),
+        };
+
+        setLoading(true);
+        setErrorMessage('');
+
+
+
+        try {
+            const response = await bookingApi(values);
+
+            const successMessage = response.data?.message || 'Appointment booked successfully!';
+            console.log('Response data:', response.data);
+            // localStorage.getItem('userId');
+
+            alert(successMessage);
+
+
+            // const { token, refreshToken } = response.data.data;
+            //
+            // localStorage.setItem('accessToken', token);
+            // localStorage.setItem('refreshToken', refreshToken);
+            // console.log('Access token:', token);
+
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
+        } catch (error) {
+            if (error.response && error.response.data) {
+                const backendMessage = error.response.data.message;
+                setErrorMessage(backendMessage);
+            } else {
+                setErrorMessage('An unexpected error occurred. Please try again.');
+            }
+        } finally {
+            setLoading(false);
+        }
+        // e.preventDefault();
     };
+
+
+    // const handleSubmit = () => {
+    //     if (title && dateTime && currentCategory) {
+    //         addAppointment({ id: Math.random(), title, dateTime, category: currentCategory });
+    //         alert('Appointment Booked');
+    //     } else {
+    //         alert('Please fill in all fields');
+    //     }
+    // };
     const SkillDisplay =({details = []})=>{
         return<>
             {
@@ -80,6 +136,37 @@ const BookAppointment = ({ addAppointment }) => {
                     ) : currentCategory === "PLUMBING" ? (
                         <SkillDisplay details={plumberDetails}/>
                     ) : null}
+
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label>Title</label>
+                            <input
+                                type="text"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label>Date & Time</label>
+                            <input
+                                type="datetime-local"
+                                value={dateTime}
+                                onChange={(e) => setDateTime(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label>Category</label>
+                            <input
+                                type="text"
+                                value={currentCategory}
+                                readOnly
+                            />
+                        </div>
+                        {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+                        <button type="submit" disabled={loading}>
+                            {loading ? 'Booking...' : 'Book Appointment'}
+                        </button>
+                    </form>
                     <button onClick={() => navigate('/')}>Back to Home</button>
                 </div>
 
