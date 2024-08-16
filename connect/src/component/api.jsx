@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const clientSignupApi = async (userData) => {
-    const response = await fetch('//https://sabiconnect-latest.onrender.com/api/v1/client/registerClient', {
+    const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/client/registerClient', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export const clientSignupApi = async (userData) => {
 };
 
 export const skillWorkerApi = async (userData) => {
-    const response = await fetch('//https://sabiconnect-latest.onrender.com/api/v1/client/registerSkilledWorker', {
+    const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/registerSkilledWorker', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export const loginApi = async (loginData) => {
 
 
 export const bookingApi = async (userData) => {
-    const response = await fetch('//https://sabiconnect-latest.onrender.com/api/v1/client/registerClient', {
+    const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/client/registerClient', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
