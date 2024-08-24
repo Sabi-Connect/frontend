@@ -71,10 +71,10 @@ const ClientSignUp = () => {
             const successMessage = response.data?.message || 'Sign up successful!';
             console.log(successMessage,"success ")
             localStorage.getItem('userId');
-            const { token, refreshToken } = response.data.data;
-            localStorage.setItem('accessToken', token);
-            localStorage.setItem('refreshToken', refreshToken);
-            console.log('Access token:', token);
+            // const { token, refreshToken } = response.data.data;
+            // localStorage.setItem('accessToken', token);
+            // localStorage.setItem('refreshToken', refreshToken);
+            // console.log('Access token:', token);
 
 
             setTimeout(() => {
