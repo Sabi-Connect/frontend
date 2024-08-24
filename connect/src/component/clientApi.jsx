@@ -24,6 +24,7 @@ export const clientSignupApi = async (userData) => {
 
         const result = await response.json();
         console.log(result);
+        console.log("hello world")
         return result;
     } catch (error) {
         console.error('Error during client signup:', error);
