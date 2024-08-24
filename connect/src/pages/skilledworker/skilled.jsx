@@ -7,7 +7,7 @@ import style from './skilled.module.css'
 import signup from '../../assets/signhen.avif'
 import * as Yup from "yup";
 import {Formik, ErrorMessage as FormikErrorMessage} from 'formik';
-import {signupApi, skillWorkerApi} from "../../component/api";
+import {signupApi, skillWorkerApi} from "../../component/skilledworkerApi";
 const SkilledWorkerSignUp = () => {
 
     const [loading, setLoading] = useState(false);
@@ -73,7 +73,7 @@ const SkilledWorkerSignUp = () => {
         try {
             const response = await skillWorkerApi(values);
 
-            const successMessage = response.data?.message || 'Login successful!';
+            const successMessage = response.data?.message || 'Signup successful!';
             console.log('Response data:', response.data);
             localStorage.getItem('userId');
 
@@ -98,8 +98,6 @@ const SkilledWorkerSignUp = () => {
             setLoading(false);
         }
 
-
-        // e.preventDefault();
     };
 
 
@@ -183,20 +181,20 @@ const SkilledWorkerSignUp = () => {
                                     <FormikErrorMessage name="username" component="div"
                                                         className="text-red-500 text-sm"/>
                                 </div>
-                                {/*<div className={style.formField}>*/}
-                                {/*    <TextField*/}
-                                {/*        label="Username"*/}
-                                {/*        variant="outlined"*/}
-                                {/*        fullWidth*/}
-                                {/*        type="username"*/}
-                                {/*        name="password"*/}
-                                {/*        value={form.username}*/}
-                                {/*        onChange={handleChange}*/}
-                                {/*        sx={roundedStyle}*/}
-                                {/*    />*/}
-                                {/*    <FormikErrorMessage name="username" component="div"*/}
-                                {/*                        className="text-red-500 text-sm"/>*/}
-                                {/*</div>*/}
+                                <div className={style.formField}>
+                                    <TextField
+                                        label="Username"
+                                        variant="outlined"
+                                        fullWidth
+                                        type="username"
+                                        name="username"
+                                        value={form.username}
+                                        onChange={handleChange}
+                                        sx={roundedStyle}
+                                    />
+                                    <FormikErrorMessage name="username" component="div"
+                                                        className="text-red-500 text-sm"/>
+                                </div>
                                 <div className={style.formField}>
                                     <TextField
                                         label="Password"
@@ -208,8 +206,6 @@ const SkilledWorkerSignUp = () => {
                                         onChange={handleChange}
                                         sx={roundedStyle}
                                     />
-                                    <FormikErrorMessage name="username" component="div"
-                                                        className="text-red-500 text-sm"/>
                                 </div>
                                 <div className={style.formField}>
                                     {/*<Button*/}
@@ -252,8 +248,8 @@ const SkilledWorkerSignUp = () => {
                                     </Button>
                                     <div>
                                         <p>Already have an Account? <button className={style.but}
-                                                                            onClick={() => navigate('/dashboard')}
-                                        >My Dashboard</button>
+                                                                            onClick={() => navigate('/Login')}
+                                        >Login</button>
                                         </p>
                                         <p>By clicking 'SignUp', you acknowledge that you have read and accept the <span
                                             className={style.terms}>Terms of Service</span> and <span

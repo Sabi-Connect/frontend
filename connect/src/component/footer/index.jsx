@@ -9,8 +9,7 @@ const Footer = () => {
                 <div>
                     <h1 className={style.fot1}>Sabi-Connect</h1>
                     <p className={style.text}>Great platform to connect that
-                        both Clients and Skilled workers<br/>
-                    </p>
+                        both Clients and Skilled workers<br/>to give them a happy ending</p>
                 </div>
 
                 <div>
