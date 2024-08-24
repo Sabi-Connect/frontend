@@ -4,43 +4,36 @@ import style from './index.module.css'
 const Footer = () => {
     return (
         <>
-{/*<<<<<<< HEAD*/}
-{/*            <footer>*/}
-{/*                <div>*/}
-{/*                    <a className={`font-semibold text-3xl`}>Sabi-Connect</a>*/}
-{/*                    <p className={`text-sm`}>Great platform to connect that*/}
-{/*                        both Clients and Skilled workers*/}
-{/*=======*/}
+
             <footer className={style.fot}>
-                <div >
+                <div>
                     <h1 className={style.fot1}>Sabi-Connect</h1>
                     <p className={style.text}>Great platform to connect that
-                        both Clients and Skilled workers<br/>
-{/*>>>>>>> origin/main*/}
-                        to give them a happy ending</p>
+                        both Clients and Skilled workers<br/>to give them a happy ending</p>
                 </div>
+
                 <div>
                     <h1 className={style.fot2}>About</h1>
-                    <p >Terms</p>
-                    <p >Pricing</p>
-                    <p >Advice</p>
-                    <p >Privacy Policy</p>
-                    <p >Clients</p>
+                    <p>Terms</p>
+                    <p>Pricing</p>
+                    <p>Advice</p>
+                    <p>Privacy Policy</p>
+                    <p>Clients</p>
                 </div>
                 <div>
                     <h1 className={style.fot3}>Resources</h1>
-                    <p >Guide</p>
-                    <p >Help Docs</p>
-                    <p >Contact Us</p>
-                    <p >Updates</p>
+                    <p>Guide</p>
+                    <p>Help Docs</p>
+                    <p>Contact Us</p>
+                    <p>Updates</p>
                 </div>
                 <div>
                     <h1 className={style.fot4}>Get job notifications</h1>
-                    <p >The latest job news articles sent to your inbox everyday</p>
+                    <p>The latest job news articles sent to your inbox everyday</p>
                 </div>
             </footer>
         </>
-    );
+);
 };
 
 export default Footer;

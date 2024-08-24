@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import {Button, Checkbox, FormControlLabel, FormGroup} from "@mui/material";
 import style from './index.module.css'
 import loginIm from '../../assets/signup3.jpg'
-import {loginApi} from "../../component/api";
+import {loginApi} from "../../component/skilledworkerApi";
 
 const Login = () => {
 
@@ -27,15 +27,9 @@ const Login = () => {
     });
 
     const [form, setForm] = useState({
-        username: '',
+        email: '',
         password: '',
     });
-
-    const initialValues = {
-        username: '',
-        password: '',
-    };
-
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -46,42 +40,29 @@ const Login = () => {
         });
     };
 
-
-    const handleSubmit = async (values) => {
+    const handleSubmit = async (event) => {
+        event.preventDefault()
         setLoading(true);
         setErrorMessage('');
 
+
         try {
-            const response = await loginApi(values);
-
-            const successMessage = response.data?.message || 'Login successful!';
-            console.log('Response data:', response.data);
-            localStorage.getItem('userId');
-
-            // Store both tokens
+            const response = await loginApi(form);
             const { token, refreshToken } = response.data.data;
-
             localStorage.setItem('accessToken', token);
             localStorage.setItem('refreshToken', refreshToken);
-            console.log('Access token:', token);
-
-            setTimeout(() => {
-                navigate('/');
-            }, 2000);
+            navigate('/');
         } catch (error) {
             if (error.response && error.response.data) {
-                const backendMessage = error.response.data.message;
-                setErrorMessage(backendMessage);
+                setErrorMessage(error.response.data.message);
             } else {
-                setErrorMessage('An unexpected error occurred. Please try again.');
+                setErrorMessage('An unexpected error occurred.');
             }
         } finally {
             setLoading(false);
         }
-
-
-        // e.preventDefault();
     };
+
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -96,21 +77,11 @@ const Login = () => {
         }
     }, [errorMessage]);
 
-
-
-
-
-
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    // };
     const roundedStyle = {
         '& .MuiOutlinedInput-root': {
             borderRadius: '9999px',
         },
     };
-
 
     return (
         <div>
@@ -122,11 +93,10 @@ const Login = () => {
                 )}
             </div>
             <Formik
-                initialValues={{username: '', password: ''}}
+                initialValues={{email: '', password: ''}}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
             >
-
                 <div className={style.logiCont}>
                     <div className={style.loginContainer}>
                         <div>
@@ -142,16 +112,16 @@ const Login = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className={style.formField}>
                                     <TextField
-                                        label="Username"
+                                        label="Email"
                                         variant="outlined"
                                         fullWidth
-                                        type="username"
-                                        name="username"
-                                        value={form.username}
+                                        type="email"
+                                        name="email"
+                                        value={form.email}
                                         onChange={handleChange}
                                         sx={roundedStyle}
                                     />
-                                    <FormikErrorMessage name="username" component="div"
+                                    <FormikErrorMessage name="email" component="div"
                                                         className="text-red-500 text-sm"/>
                                 </div>
                                 <div className={style.formField}>
@@ -199,8 +169,12 @@ const Login = () => {
 
                             <div>
                                 <p>Don't have an Account? <button className={style.butts}
-                                                                  onClick={() => navigate('/sign')}
-                                >Sign Up</button>
+                                                                  onClick={() => navigate('/client')}
+                                >Signup as client</button>
+                                    <button className={style.butts}
+                                            onClick={() => navigate('/skilWok')}
+                                    >Signup as worker
+                                    </button>
                                 </p>
                             </div>
                         </div>
@@ -209,8 +183,6 @@ const Login = () => {
                 </div>
             </Formik>
         </div>
-
-
     );
 };
 
