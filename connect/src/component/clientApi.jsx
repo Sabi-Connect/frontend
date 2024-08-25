@@ -2,7 +2,6 @@ import axios from "axios";
 
 
 export const clientSignupApi = async (userData) => {
-    // console.log("hello world")
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -14,20 +13,25 @@ export const clientSignupApi = async (userData) => {
     };
 
     try {
-        console.log("hello world")
+        // console.log("hello world")
         const response = await fetch("https://sabiconnect-latest.onrender.com/api/v1/client/registerClient", requestOptions);
 
         if (!response.ok) {
-            console.log("hello")
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorData = await response.json();  // Attempt to parse the error message
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
         }
+
+        //     console.log("hello")
+        //     throw new Error(`HTTP error! status: ${response.status}`);
+        // }
+
 
         const result = await response.json();
         console.log(result);
         console.log("hello world")
         return result;
     } catch (error) {
-        console.error('Error during client signup:', error);
+        console.error('Error during client signup:', error.message);
         throw error;  // Re-throw the error to handle it higher up in your application
     }
 };
