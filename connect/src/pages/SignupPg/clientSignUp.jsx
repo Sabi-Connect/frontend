@@ -7,7 +7,8 @@ import style from './client.module.css'
 import signup from '../../assets/signhen.avif'
 import * as Yup from "yup";
 import {Formik, ErrorMessage as FormikErrorMessage} from 'formik';
-import {clientSignupApi} from "../../component/clientApi";
+import {clientSignupApi, callClientNothingEndpoint} from "../../component/clientApi";
+
 const ClientSignUp = () => {
 
     const [loading, setLoading] = useState(false);
@@ -284,6 +285,7 @@ const ClientSignUp = () => {
                                         >
                                             Sign up as a client
                                         </Button>
+                                        
                                         <div>
                                             <p>Already have an Account? <button className={style.but}
                                                                                 onClick={() => navigate('/login')}
