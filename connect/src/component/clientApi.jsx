@@ -1,30 +1,61 @@
 import axios from "axios";
 
-
-export const clientSignupApi = async (userData) => {
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+export async function callClientNothingEndpoint() {
+    const url = 'http://localhost:8080/api/v1/client/nothing';
 
     const requestOptions = {
-        method: "POST",  // Ensures that the request is a POST request
-        headers: myHeaders,
-        body: JSON.stringify(userData),  // User data is properly stringified for the POST body
-        redirect: "follow"
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
     };
 
     try {
-        // console.log("hello world")
-        const response = await fetch("https://sabiconnect-latest.onrender.com/api/v1/client/registerClient", requestOptions);
+        const response = await fetch(url, requestOptions);
 
         if (!response.ok) {
-            const errorData = await response.json();  // Attempt to parse the error message
+            const errorData = await response.json();
             throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
         }
 
-        //     console.log("hello")
-        //     throw new Error(`HTTP error! status: ${response.status}`);
-        // }
+        const data = await response.json();
+        console.log('Response data:', data);
 
+    } catch (error) {
+        console.error('Error during fetch:', error.message);
+    }
+}
+
+export const clientSignupApi = async (userData) => {
+    console.log(userData);
+
+    // const myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),  // User data is properly stringified for the POST body
+    };
+
+    // const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
+    const URL = 'http://localhost:8080/api/v1/client/registerClient';
+    try {
+        const response = await fetch(URL,  {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData)
+        }).then(resp => console.log(resp));
+        console.log(response);
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
+        }
 
         const result = await response.json();
         console.log(result);
@@ -114,4 +145,3 @@ export const deleteAppointmentApi = async (userData) => {
     }
 
     return await response.json();
-};
