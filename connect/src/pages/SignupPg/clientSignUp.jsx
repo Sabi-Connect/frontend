@@ -95,10 +95,10 @@ const ClientSignUp = () => {
                 //         const backendMessage = error.response.data.message;
                 //         setErrorMessage(backendMessage);
             }
-        //     } else {
-        //         console.log(error)
-        //         setErrorMessage(error.message)
-        //     }
+            //     } else {
+            //         console.log(error)
+            //         setErrorMessage(error.message)
+            //     }
         } finally {
             setLoading(false);
             setSubmitting(false);
@@ -285,7 +285,7 @@ const ClientSignUp = () => {
                                         >
                                             Sign up as a client
                                         </Button>
-                                        
+
                                         <div>
                                             <p>Already have an Account? <button className={style.but}
                                                                                 onClick={() => navigate('/login')}
