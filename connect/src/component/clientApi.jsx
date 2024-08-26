@@ -145,3 +145,4 @@ export const deleteAppointmentApi = async (userData) => {
     }
 
     return await response.json();
+}
