@@ -32,7 +32,7 @@ export const clientSignupApi = async (userData) => {
         return result;
     } catch (error) {
         console.error('Error during client signup:', error.message);
-        throw error;  // Re-throw the error to handle it higher up in your application
+        throw error;  //
     }
 };
 
