@@ -73,14 +73,14 @@ export const cancelAppointmentApi = async (userData) => {
 };
 
 
-//
-// export const loginApi = async (loginData) => {
-//     try {
-//         return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
-//     } catch (error) {
-//         throw error;
-//     }
-// };
+
+export const loginApi = async (loginData) => {
+    try {
+        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
+    } catch (error) {
+        throw error;
+    }
+};
 
 
 export const bookingApi = async (userData) => {
