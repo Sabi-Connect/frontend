@@ -7,9 +7,9 @@ import * as Yup from 'yup';
 import {Button, Checkbox, FormControlLabel, FormGroup} from "@mui/material";
 import style from './index.module.css'
 import loginIm from '../../assets/signup3.jpg'
-import {loginApi} from "../../component/loginApi";
+import {loginApi} from "../../component/clientApi";
 
-const Login = () => {
+const ClientLogin = () => {
 
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -189,7 +189,7 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default ClientLogin;
 
 
 // import React, { useEffect, useState } from "react";
@@ -203,7 +203,7 @@ export default Login;
 // import loginIm from '../../assets/signup3.jpg';
 // import { loginApi } from "../../component/loginApi";
 //
-// const Login = () => {
+// const ClientLogin = () => {
 //     const [loading, setLoading] = useState(false);
 //     const [errorMessage, setErrorMessage] = useState('');
 //     const [showPassword, setShowPassword] = useState(false);
@@ -377,5 +377,5 @@ export default Login;
 //     );
 // };
 //
-// export default Login;
+// export default ClientLogin;
 

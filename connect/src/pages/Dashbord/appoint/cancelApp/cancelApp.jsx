@@ -1,75 +1,3 @@
-// import React, {useState} from 'react';
-// import './index.module.css'
-//
-// import {cancelAppointmentApi} from "../../../../component/clientApi";
-//
-// const CancelAppointment = ({ appointments, removeAppointment }) => {
-//
-//     const [id, setId] = useState('');
-//
-//     const handleCancel = () => {
-//         if (id) {
-//             removeAppointment(id);
-//             alert('Appointment Cancelled');
-//         } else {
-//             alert('Please select an appointment to cancel.');
-//         }
-//     };
-//
-//     const handleSubmit = async (values) => {
-//         setLoading(true);
-//         setErrorMessage('');
-//
-//         try {
-//             const response = await cancelAppointmentApi(values);
-//
-//             const successMessage = response.data?.message || 'Cancel Appointment successful!';
-//             // console.log('Response data:', response.data);
-//             localStorage.getItem('userId');
-//
-//             // Store both tokens
-//             const { token, refreshToken } = response.data.data;
-//
-//             localStorage.setItem('accessToken', token);
-//             localStorage.setItem('refreshToken', refreshToken);
-//             console.log('Access token:', token);
-//
-//             setTimeout(() => {
-//                 navigate('/');
-//             }, 2000);
-//         } catch (error) {
-//             if (error.response && error.response.data) {
-//                 const backendMessage = error.response.data.message;
-//                 setErrorMessage(backendMessage);
-//             } else {
-//                 setErrorMessage('Please select an appointment to cancel.');
-//             }
-//         } finally {
-//             setLoading(false);
-//         }
-//
-//
-//     return (
-//         <div>
-//             <h2>Cancel Appointment</h2>
-//             <select onChange={(e) => setId(e.target.value)}>
-//                 <option value="">Select Appointment</option>
-//                 {Array.isArray(appointments) && appointments.map(app => (
-//                     <option key={app.id} value={app.id}>{app.title} on {app.date}</option>
-//                 ))}
-//             </select>
-//             <button onClick={handleCancel}>Cancel Appointment</button>
-//         </div>
-//     );
-// };
-//
-// export default CancelAppointment;
-
-
-
-
-
-
 import React, { useState } from 'react';
 import './index.module.css';
 import { cancelAppointmentApi } from "../../../../component/clientApi";
@@ -82,7 +10,6 @@ const CancelAppointment = ({ appointments, removeAppointment }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
-
     const handleCancel = () => {
         const appointment = appointments.find(app => app.id === id);
 

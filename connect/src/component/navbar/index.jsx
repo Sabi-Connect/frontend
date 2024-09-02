@@ -55,7 +55,7 @@ const NavBar = () => {
 
 
 
-                    {/*<Button variant="contained">Login</Button>*/}
+                    {/*<Button variant="contained">ClientLogin</Button>*/}
                     {/*<Button variant="outlined">SignUp</Button>*/}
                 </Stack>
 

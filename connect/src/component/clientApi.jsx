@@ -63,17 +63,12 @@ export const cancelAppointmentApi = async (userData) => {
         },
         body: JSON.stringify(userData),
     });
-
     if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'An error occurred');
     }
-
     return await response.json();
 };
-
-
-
 export const loginApi = async (loginData) => {
     try {
         return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
@@ -81,8 +76,6 @@ export const loginApi = async (loginData) => {
         throw error;
     }
 };
-
-
 export const bookingApi = async (userData) => {
     const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/client/bookAppointment', {
         method: 'POST',
@@ -91,15 +84,12 @@ export const bookingApi = async (userData) => {
         },
         body: JSON.stringify(userData),
     });
-
     if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'An error occurred');
     }
-
     return await response.json();
 };
-
 export const viewAllAppointmentApi = async (userData) => {
     const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/client/viewAllAppointment', {
         method: 'POST',
@@ -108,15 +98,12 @@ export const viewAllAppointmentApi = async (userData) => {
         },
         body: JSON.stringify(userData),
     });
-
     if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'An error occurred');
     }
-
     return await response.json();
 };
-
 export const deleteAppointmentApi = async (userData) => {
     const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/client/deleteAppointment', {
         method: 'POST',
@@ -125,11 +112,9 @@ export const deleteAppointmentApi = async (userData) => {
         },
         body: JSON.stringify(userData),
     });
-
     if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'An error occurred');
     }
-
     return await response.json();
 }

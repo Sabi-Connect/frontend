@@ -1,5 +1,5 @@
 import ClientSignUp from "../pages/SignupPg/clientSignUp";
-import Login from "../pages/LoginPg/login";
+import ClientLogin from "../pages/LoginPg/clientLogin";
 import Layout from "../component/layout";
 import Home from "../pages/Home";
 import MyDashboard from "../pages/Dashbord/dashboard/mydash";
@@ -47,7 +47,7 @@ export const ROUTE = [
     },
     {
         path: "login",
-        element:<Login/>
+        element:<ClientLogin/>
     },
     {
         path: "dashboard",
