@@ -8,6 +8,7 @@ export const loginApi = async (loginData, userType) => {
 
     const apiEndpoint = endpointMap[userType] || endpointMap.client;
 
+
     try {
         return await axios.post(apiEndpoint, loginData);
     } catch (error) {
