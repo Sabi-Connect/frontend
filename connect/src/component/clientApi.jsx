@@ -29,17 +29,6 @@ export async function callClientNothingEndpoint() {
 export const clientSignupApi = async (userData) => {
     console.log(userData);
 
-    // const myHeaders = new Headers();
-    // myHeaders.append("Content-Type", "application/json");
-
-    const requestOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),  // User data is properly stringified for the POST body
-    };
-
     // const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
     const URL = 'http://localhost:8080/api/v1/client/registerClient';
     try {
@@ -49,7 +38,7 @@ export const clientSignupApi = async (userData) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(userData)
-        }).then(resp => console.log(resp));
+        })
         console.log(response);
 
         if (!response.ok) {
@@ -63,7 +52,7 @@ export const clientSignupApi = async (userData) => {
         return result;
     } catch (error) {
         console.error('Error during client signup:', error.message);
-        throw error;  //
+        throw error;
     }
 };
 
