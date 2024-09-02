@@ -29,8 +29,8 @@ export async function callClientNothingEndpoint() {
 export const clientSignupApi = async (userData) => {
     console.log(userData);
 
-    // const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
-    const URL = 'http://localhost:8080/api/v1/client/registerClient';
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
+
     try {
         const response = await fetch(URL,  {
             method: "POST",
@@ -48,7 +48,6 @@ export const clientSignupApi = async (userData) => {
 
         const result = await response.json();
         console.log(result);
-        console.log("hello world")
         return result;
     } catch (error) {
         console.error('Error during client signup:', error.message);
@@ -74,15 +73,14 @@ export const cancelAppointmentApi = async (userData) => {
 };
 
 
-
-export const loginApi = async (loginData) => {
-    try {
-        // Replace with your actual login endpoint
-        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
-    } catch (error) {
-        throw error;
-    }
-};
+//
+// export const loginApi = async (loginData) => {
+//     try {
+//         return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
+//     } catch (error) {
+//         throw error;
+//     }
+// };
 
 
 export const bookingApi = async (userData) => {

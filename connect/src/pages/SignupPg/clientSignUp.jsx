@@ -15,7 +15,6 @@ const ClientSignUp = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [isError, setIsError] = useState(false);
     const [message, setMessage] = useState('');
-    // const [showPassword, setShowPassword] = useState(false);
 
 
     const validationSchema = Yup.object().shape({
@@ -43,45 +42,22 @@ const ClientSignUp = () => {
 
     };
 
-    // const [form, setForm] = useState({
-    //     email: '',
-    //     password: '',
-    //     firstName: '',
-    //     lastName: '',
-    //     username: '',
-    //     houseNumber: '',
-    //     street: '',
-    //     area: '',
-    //
-    // });
-
     const navigate = useNavigate();
-    // const handleChange = (e) => {
-    //     const { name, value, type, checked } = e.target;
-    //     setForm({
-    //         ...form,
-    //         [name]: type === 'checkbox' ? checked : value
-    //     });
-    // };
     const roundedStyle = {
         '& .MuiOutlinedInput-root': {
             borderRadius: '9999px',
         },
     };
     const handleSubmit = async (values,{setSubmitting}) => {
-        // let eve = event.preventDefault();
-        // console.log(eve)
         setLoading(true);
         setMessage('');
         setIsError(false);
         try {
             const response = await clientSignupApi(values);
-            // const successMessage = response.data?.message || 'Sign up successful!';
             const successMessage = response.message || 'Sign up successful!';
             setMessage(successMessage)
-            // console.log('Response data:',response.data);
             console.log(successMessage,"success ")
-            // localStorage.getItem('userId');
+
 
             setTimeout(() => {
                 navigate('/');
@@ -90,15 +66,8 @@ const ClientSignUp = () => {
             if (error.message) {
                 setMessage(error.message);  // Set the error message
                 setIsError(true);
-                // } catch (error) {
-                //     if (error.response && error.response.data) {
-                //         const backendMessage = error.response.data.message;
-                //         setErrorMessage(backendMessage);
             }
-            //     } else {
-            //         console.log(error)
-            //         setErrorMessage(error.message)
-            //     }
+
         } finally {
             setLoading(false);
             setSubmitting(false);
