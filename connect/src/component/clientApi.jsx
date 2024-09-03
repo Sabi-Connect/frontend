@@ -30,6 +30,7 @@ export const clientSignupApi = async (userData) => {
     console.log(userData);
 
     const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
+    // const URL = 'http://localhost:8080/api/v1/client/registerClient';
 
     try {
         const response = await fetch(URL,  {
@@ -39,6 +40,7 @@ export const clientSignupApi = async (userData) => {
             },
             body: JSON.stringify(userData)
         })
+        console.log(JSON.stringify(userData));
         console.log(response);
 
         if (!response.ok) {
@@ -71,7 +73,7 @@ export const cancelAppointmentApi = async (userData) => {
 };
 export const loginApi = async (loginData) => {
     try {
-        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
+        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/client/login', loginData);
     } catch (error) {
         throw error;
     }
