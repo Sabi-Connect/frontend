@@ -39,7 +39,7 @@ export const skillWorkerApi = async (userData) => {
 
 export const loginApi = async (loginData) => {
     try {
-        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/auth/login', loginData);
+        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/login', loginData);
     } catch (error) {
         throw error;
     }
