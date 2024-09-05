@@ -1,3 +1,4 @@
+/* General Styles */
 .signupContainer {
     display: flex;
     flex-direction: column;
@@ -18,17 +19,14 @@
     border: none;
     cursor: pointer;
     margin-right: 330px;
-
-
 }
 
 .backButton:hover {
     color: #000;
 }
 
-
 .signForm {
-    width: 300%;
+    width: 100%;
     max-width: 400px;
     background-color: white;
     padding: 32px;
@@ -64,16 +62,39 @@
     background-color: #2b8fda;
 }
 
-.terms{
+.terms {
     color: #2b8fda;
 }
 
-.but:hover{
+.but:hover {
     background-color: #26A4FF;
 }
 
-.signT{
+.signT {
     display: flex;
     justify-content: space-evenly;
-    margin-right: -200px;
 }
+
+@media (max-width: 768px) {
+    .backButton {
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .signForm {
+        padding: 24px;
+    }
+
+    .loginButton {
+        padding: 10px 0;
+    }
+
+    .signupContainer {
+        padding: 24px;
+    }
+
+    .signT {
+        justify-content: center;
+    }
+}
+

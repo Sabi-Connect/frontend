@@ -4,7 +4,6 @@
     padding: 40px 0;
     background-color: #dce8f4;
     position: relative;
-
 }
 
 .img1 {
@@ -80,10 +79,51 @@
     color: #26A4FF;
 }
 
-.heroText h1 {
-    width: 100%;
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .heroInner {
+        padding: 20px 0;
+        flex-direction: column;
+    }
+
+    .img1 {
+        width: 100%;
+        height: 400px;
+    }
+
+    .heroText {
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        padding: 10px;
+    }
+
+    .her1 {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .her2 {
+        font-size: 30px;
+    }
 }
 
-.heroText p {
-    width: 100%;
+@media (max-width: 480px) {
+    .img1 {
+        height: 300px;
+    }
+
+    .heroText {
+        top: 55%;
+        padding: 5px;
+    }
+
+    .her1 {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .her2 {
+        font-size: 20px;
+    }
 }
