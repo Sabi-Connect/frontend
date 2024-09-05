@@ -1,8 +1,10 @@
 import React from 'react';
 import style from './index.module.css'
 import {BiBookAlt, BiHelpCircle, BiHome, BiMessage, BiSolidReport, BiStats, BiTask} from "react-icons/bi";
+import {useNavigate} from "react-router-dom";
 
 const Dashboard = () => {
+    const navigate = useNavigate();
     return (
         <div className={style.menu}>
 
@@ -18,8 +20,9 @@ const Dashboard = () => {
                     Dashboard
                 </a>
                 <a href="#" className={style.item}>
-                    <BiTask className={style.logoIcon} />
+                    <BiTask className={style.logoIcon} onClick={() => navigate('/appoint')}/>
                     Appointment
+
                 </a>
                 <a href="#" className={style.item}>
                     <BiSolidReport className={style.logoIcon}/>

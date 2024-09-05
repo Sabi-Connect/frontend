@@ -1,22 +1,16 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import style from './index.module.css'
+import style from './navIndex.module.css'
 import {Button, Stack} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-const CustomButton1 = styled(Button)(({ theme }) => ({
-    backgroundColor: '#1531e7',
-    color: '#fff',
-    '&:hover': {
-        backgroundColor: '#1531e7',
-    },
-}));
-
 const CustomButton2 = styled(Button)(({ theme }) => ({
-    borderColor: '#1531e7',
+    borderColor: '#5a97d9',
     color: '#fff',
+    fontSize: '10px', // Adjust the font size as needed
+    padding: '5px 10px',
     '&:hover': {
-        borderColor: '#1531e7',
+        borderColor: '#5887ef',
         color: '#fff',
     },
 }));
@@ -32,33 +26,17 @@ const NavBar = () => {
 
             <div className={style.nav2}>
                 <p >Home</p>
-                <p >Find Worker</p>
+                <p >Skills</p>
                 <p >Clients</p>
-                {/*<div>*/}
-                {/*    <SearchField*/}
-                {/*        variant="outlined"*/}
-                {/*        placeholder="Search"*/}
-                {/*        size="small"*/}
-                {/*    />*/}
-                {/*</div>*/}
             </div>
 
-
-
-
             <div className={style.btn1}>
-                <Stack spacing={2} direction="row">
-                    <CustomButton1 variant="contained" onClick={() => navigate('/login')}>Login</CustomButton1>
+                <Stack spacing={1} direction="row">
+                    <CustomButton2 variant="contained" onClick={() => navigate('/login')}>Login</CustomButton2>
                     <CustomButton2 variant="contained" onClick={() => navigate('/skilWok')}>Sign up as skilledworker</CustomButton2>
                     <CustomButton2 variant="contained" onClick={() => navigate('/client')}>Sign up as client</CustomButton2>
                     <CustomButton2 variant="contained" onClick={() => navigate('/book')}>Book Appointment</CustomButton2>
-
-
-
-                    {/*<Button variant="contained">ClientLogin</Button>*/}
-                    {/*<Button variant="outlined">SignUp</Button>*/}
                 </Stack>
-
             </div>
         </div>
     );

@@ -34,7 +34,7 @@ const WorkerProfiles = () => {
 
     return (
         <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h1>{category.charAt(0).toUpperCase() + category.slice(1)} Workers</h1>
+            <h1>{category.charAt(0).toUpperCase().toLowerCase() + category.slice(1)} Workers</h1>
             <ul>
                 {workers.length > 0 ? (
                     workers.map((worker, index) => (

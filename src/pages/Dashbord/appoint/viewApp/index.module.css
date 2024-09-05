@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -28,8 +27,8 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Enable wrapping on smaller screens */
 }
-
 
 button {
     padding: 10px 15px;
@@ -79,7 +78,6 @@ button:hover {
     opacity: 0.9;
 }
 
-
 .combinedAppointmentComponent {
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -107,4 +105,49 @@ button:hover {
 .error {
     background-color: #f8d7da;
     color: #721c24;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .appointment-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .combinedAppointmentComponent {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .appointment-item {
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .combinedAppointmentComponent {
+        padding: 8px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
 }
