@@ -4,10 +4,10 @@ import TextField from "@mui/material/TextField";
 import {Button} from "@mui/material";
 import {HiArrowLeft} from "react-icons/hi";
 import style from './client.module.css'
-import signup from '../../assets/signhen.avif'
+import signup from '../../../../../../assets/signhen.avif'
 import * as Yup from "yup";
 import {Formik, ErrorMessage as FormikErrorMessage} from 'formik';
-import {clientSignupApi, callClientNothingEndpoint} from "../../component/clientApi";
+import {clientSignupApi, callClientNothingEndpoint} from "../../../../../../component/clientApi";
 
 const ClientSignUp = () => {
 
@@ -18,27 +18,18 @@ const ClientSignUp = () => {
 
 
     const validationSchema = Yup.object().shape({
-        firstName: Yup.string().matches(/^[a-zA-Z\s]+$/, 'First Name should only contain letters and spaces').required('First Name is required'),
-        lastName: Yup.string().matches(/^[a-zA-Z\s]+$/, 'Last Name should only contain letters and spaces').required('Last Name is required'),
+        fullName: Yup.string().matches(/^[a-zA-Z\s]+$/, 'Full Name should only contain letters and spaces').required('First Name is required'),
         email: Yup.string().email('Invalid email address').required('Email Address is required'),
-        username: Yup.string().required('Username is required'),
-        houseNumber: Yup.string().required('House Number is required'),
-        street: Yup.string().required('Street is required'),
-        area: Yup.string().required('Area is required'),
+        // username: Yup.string().required('Username is required'),
         password: Yup.string().required('Password is required'),
-        phoneNumber: Yup.string().required('Phone number is required')
+        // phoneNumber: Yup.string().required('Phone number is required')
     });
 
     const initialValues = {
-        username: '',
         password: '',
         email: '',
-        lastName: '',
-        firstName: '',
-        houseNumber: '',
-        street: '',
-        area: '',
-        phoneNumber:'',
+        fullName: '',
+
 
     };
 
@@ -64,7 +55,7 @@ const ClientSignUp = () => {
             }, 500);
         } catch (error) {
             if (error.message) {
-                setMessage(error.message);  // Set the error message
+                setMessage(error.message);
                 setIsError(true);
             }
 
@@ -113,30 +104,16 @@ const ClientSignUp = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className={style.formField}>
                                         <TextField
-                                            label="First Name"
+                                            label="Full Name"
                                             variant="outlined"
                                             fullWidth
                                             type="text"
-                                            name="firstName"
+                                            name="fullName"
                                             value={values.firstName}
                                             onChange={handleChange}
                                             sx={roundedStyle}
                                         />
-                                        <FormikErrorMessage name="firstName" component="div"
-                                                            className="text-red-500 text-sm"/>
-                                    </div>
-                                    <div className={style.formField}>
-                                        <TextField
-                                            label="Last Name"
-                                            variant="outlined"
-                                            fullWidth
-                                            type="text"
-                                            name="lastName"
-                                            value={values.lastName}
-                                            onChange={handleChange}
-                                            sx={roundedStyle}
-                                        />
-                                        <FormikErrorMessage name="lastName" component="div"
+                                        <FormikErrorMessage name="fullName" component="div"
                                                             className="text-red-500 text-sm"/>
                                     </div>
                                     <div className={style.formField}>
@@ -151,76 +128,6 @@ const ClientSignUp = () => {
                                             sx={roundedStyle}
                                         />
                                         <FormikErrorMessage name="email" component="div"
-                                                            className="text-red-500 text-sm"/>
-                                    </div>
-                                    <div className={style.formField}>
-                                        <TextField
-                                            label="Username"
-                                            variant="outlined"
-                                            fullWidth
-                                            type="text"
-                                            name="username"
-                                            value={values.username}
-                                            onChange={handleChange}
-                                            sx={roundedStyle}
-                                        />
-                                        <FormikErrorMessage name="username" component="div"
-                                                            className="text-red-500 text-sm"/>
-                                    </div>
-                                    <div className={style.formField}>
-                                        <TextField
-                                            label="Housenumber"
-                                            variant="outlined"
-                                            fullWidth
-                                            type="text"
-                                            name="houseNumber"
-                                            value={values.houseNumber}
-                                            onChange={handleChange}
-                                            sx={roundedStyle}
-                                        />
-                                        {/*<FormikErrorMessage name="housenumber" component="div"*/}
-                                        {/*                    className="text-red-500 text-sm"/>*/}
-                                    </div>
-                                    <div className={style.formField}>
-                                        <TextField
-                                            label="Street"
-                                            variant="outlined"
-                                            fullWidth
-                                            type="text"
-                                            name="street"
-                                            value={values.street}
-                                            onChange={handleChange}
-                                            sx={roundedStyle}
-                                        />
-                                        <FormikErrorMessage name="street" component="div"
-                                                            className="text-red-500 text-sm"/>
-                                    </div>
-                                    <div className={style.formField}>
-                                        <TextField
-                                            label="Area"
-                                            variant="outlined"
-                                            fullWidth
-                                            type="text"
-                                            name="area"
-                                            value={values.area}
-                                            onChange={handleChange}
-                                            sx={roundedStyle}
-                                        />
-                                        <FormikErrorMessage name="area" component="div"
-                                                            className="text-red-500 text-sm"/>
-                                    </div>
-                                    <div className={style.formField}>
-                                        <TextField
-                                            label="PhoneNumber"
-                                            variant="outlined"
-                                            fullWidth
-                                            type="tel"
-                                            name="phoneNumber"
-                                            value={values.phoneNumber}
-                                            onChange={handleChange}
-                                            sx={roundedStyle}
-                                        />
-                                        <FormikErrorMessage name="phoneNumber" component="div"
                                                             className="text-red-500 text-sm"/>
                                     </div>
                                     <div className={style.formField}>

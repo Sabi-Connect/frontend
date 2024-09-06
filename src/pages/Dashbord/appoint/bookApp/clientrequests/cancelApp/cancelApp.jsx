@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.module.css';
-import { cancelAppointmentApi } from "../../../../component/clientApi";
+import { cancelAppointmentApi } from "../../../../../../component/clientApi";
 import {useNavigate} from "react-router-dom";
 
 const CancelAppointment = ({ appointments, removeAppointment }) => {

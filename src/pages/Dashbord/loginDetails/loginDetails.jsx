@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "../MyProfile/content.module.css";
+import style from "../appoint/bookApp/workerrequests/MyProfile/content.module.css";
 import {useNavigate} from "react-router-dom";
 
 const LoginDetails = () => {

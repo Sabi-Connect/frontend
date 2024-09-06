@@ -32,9 +32,6 @@ const SkilledLogin = () => {
     });
     const navigate = useNavigate();
 
-    // const location = useLocation();
-    // const userType = location.pathname.includes('/skilWok') ? 'worker' : 'worker';
-
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setForm({
@@ -47,6 +44,7 @@ const SkilledLogin = () => {
         event.preventDefault()
         setLoading(true);
         setErrorMessage('');
+        console.log(form);
 
 
         try {
@@ -54,7 +52,7 @@ const SkilledLogin = () => {
             const { token, refreshToken } = response.data.data;
             localStorage.setItem('accessToken', token);
             localStorage.setItem('refreshToken', refreshToken);
-            navigate('/');
+            navigate('/book');
         } catch (error) {
             if (error.response && error.response.data) {
                 setErrorMessage(error.response.data.message);

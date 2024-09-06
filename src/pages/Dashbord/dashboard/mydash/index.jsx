@@ -1,7 +1,7 @@
 import React from 'react';
 import Dashboard from "../dashboard";
 import style from './index.module.css'
-import ContentHeader from "../../MyProfile/contentheader";
+import ContentHeader from "../../appoint/bookApp/workerrequests/MyProfile/contentheader";
 const MyDashboard = () => {
     return (
         <div className={style.dashboard}>

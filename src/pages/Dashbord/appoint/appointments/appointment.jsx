@@ -25,12 +25,6 @@ const AppointmentComponent = () => {
             <h1 className={styles.logoH1}>SabiConnect</h1>
             <h2>{isClient ? 'Client Appointment' : 'Skilled Worker Appointment'}</h2>
             <img className={styles.bannerImage} src={banner} alt={''} />
-
-            {/*<div className="role-toggle">*/}
-            {/*    <button onClick={() => setIsClient(true)}>Client</button>*/}
-            {/*    <button onClick={() => setIsClient(false)}>Skilled Worker</button>*/}
-            {/*</div>*/}
-
             <div className="appointment-actions">
                 {isClient ? (
                     <>

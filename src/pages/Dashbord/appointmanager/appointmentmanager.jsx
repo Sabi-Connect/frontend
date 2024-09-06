@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import styles from './appointmentmanager.module.css'
 import BookAppointment from "../appoint/bookApp/bookappt";
-import CancelAppointment from "../appoint/cancelApp/cancelApp";
+import CancelAppointment from "../appoint/bookApp/clientrequests/cancelApp/cancelApp";
 
 const AppointmentManager = () => {
     const [appointments, setAppointments] = useState([]);
