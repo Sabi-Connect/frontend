@@ -162,7 +162,6 @@ const SkilledWorkerSignUp = () => {
                                                 borderRadius: '9999px',
                                                 '&:hover': {
                                                     backgroundColor: '',
-
                                                 },
                                             }}
                                             className={style.signButton}
@@ -179,6 +178,7 @@ const SkilledWorkerSignUp = () => {
                                                 the <span
                                                     className={style.terms}>Terms of Service</span> and <span
                                                     className={style.terms}> Privacy Policy</span>
+
                                             </p>
                                         </div>
                                     </div>
