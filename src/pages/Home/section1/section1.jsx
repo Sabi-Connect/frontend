@@ -121,6 +121,7 @@ const Section1 = () => {
                     </div>
 
                     <div className={style.card}>
+
                     <div>
                             <img className={style.img} src={clean} alt="clean"/>
                         </div>
