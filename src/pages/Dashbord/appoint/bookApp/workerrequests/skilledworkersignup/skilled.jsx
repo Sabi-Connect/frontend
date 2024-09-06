@@ -4,11 +4,11 @@ import TextField from "@mui/material/TextField";
 import {Button} from "@mui/material";
 import {HiArrowLeft} from "react-icons/hi";
 import style from './skilled.module.css'
-import signup from '../../assets/signhen.avif'
+import signup from '../../../../../../assets/signhen.avif'
 import * as Yup from "yup";
 import {Formik, ErrorMessage as FormikErrorMessage} from 'formik';
-import {signupApi, skillWorkerApi} from "../../component/skilledworkerApi";
-import {clientSignupApi} from "../../component/clientApi";
+import {signupApi, skillWorkerApi} from "../../../../../../component/skilledworkerApi";
+import {clientSignupApi} from "../../../../../../component/clientApi";
 const SkilledWorkerSignUp = () => {
 
     const [loading, setLoading] = useState(false);

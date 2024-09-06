@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import style from './content.module.css';
 import {useNavigate} from "react-router-dom";
-import igmIc from "../../../assets/imageiconR.png";
-import crop from "../../../assets/skilledcrop.jpg";
+import igmIc from "../../../../../../assets/imageiconR.png";
+import crop from "../../../../../../assets/skilledcrop.jpg";
 import {FormControl, FormControlLabel, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, useTheme} from "@mui/material";
+import {addSkillApi, updateProfileApi} from "../../../../../../component/skilledworkerApi";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -64,27 +65,21 @@ const ContentHeader = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // try {
-        //     const response = await fetch('https://your-backend-api.com/updateProfile', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(formData),
-        //     });
-        //
-        //     if (response.ok) {
-        //
-        //         alert('Profile updated successfully');
-        //         navigate('/login');
-        //     } else {
-        //
-        //         alert('Failed to update profile. Please try again.');
-        //     }
-        // } catch (error) {
-        //     console.error('Error updating profile:', error);
-        //     alert('An error occurred. Please try again.');
-        // }
+        try {
+            const response = await updateProfileApi(userData);
+
+            if (response.ok) {
+
+                alert('Profile updated successfully');
+                navigate('/login');
+            } else {
+
+                alert('Failed to update profile. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            alert('An error occurred. Please try again.');
+        }
     };
 
     return (

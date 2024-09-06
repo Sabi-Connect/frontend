@@ -32,9 +32,6 @@ const SkilledLogin = () => {
     });
     const navigate = useNavigate();
 
-    // const location = useLocation();
-    // const userType = location.pathname.includes('/skilWok') ? 'worker' : 'worker';
-
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setForm({

@@ -4,10 +4,10 @@ import TextField from "@mui/material/TextField";
 import {Button} from "@mui/material";
 import {HiArrowLeft} from "react-icons/hi";
 import style from './client.module.css'
-import signup from '../../assets/signhen.avif'
+import signup from '../../../../../../assets/signhen.avif'
 import * as Yup from "yup";
 import {Formik, ErrorMessage as FormikErrorMessage} from 'formik';
-import {clientSignupApi, callClientNothingEndpoint} from "../../component/clientApi";
+import {clientSignupApi, callClientNothingEndpoint} from "../../../../../../component/clientApi";
 
 const ClientSignUp = () => {
 

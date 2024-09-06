@@ -1,4 +1,4 @@
-import ClientSignUp from "../pages/SignupPg/clientSignUp";
+import ClientSignUp from "../pages/Dashbord/appoint/bookApp/clientrequests/clientregister/clientSignUp";
 import ClientLogin from "../pages/LoginPg/clientLogin";
 import Layout from "../component/layout";
 import Home from "../pages/Home";
@@ -6,12 +6,12 @@ import MyDashboard from "../pages/Dashbord/dashboard/mydash";
 
 import Appoint from "../pages/Dashbord/appoint/appoint";
 import BookAppointment from "../pages/Dashbord/appoint/bookApp/bookappt";
-import CancelAppointment from "../pages/Dashbord/appoint/cancelApp/cancelApp";
-import ViewAllAppointments from "../pages/Dashbord/appoint/viewApp/viewApp";
-import UpdateAppointment from "../pages/Dashbord/appoint/updateApp/updateApp";
+import CancelAppointment from "../pages/Dashbord/appoint/bookApp/clientrequests/cancelApp/cancelApp";
+import ViewAllAppointments from "../pages/Dashbord/appoint/bookApp/clientrequests/viewApp/viewApp";
+import UpdateAppointment from "../pages/Dashbord/appoint/bookApp/clientrequests/updateApp/updateApp";
 import WorkerProfiles from "../pages/Dashbord/catigory/imageCategory";
 import AppointmentManager from "../pages/Dashbord/appointmanager/appointmentmanager";
-import SkilledWorkerSignUp from "../pages/skilledworker/skilled";
+import SkilledWorkerSignUp from "../pages/Dashbord/appoint/bookApp/workerrequests/skilledworkersignup/skilled";
 
 
 
