@@ -1,0 +1,36 @@
+.mainContainer{
+    display: flex;
+    background-color: #bfdfff;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 0 0 0 ;
+    width: 520px;
+}
+.mainContainer:hover{
+    background-color: #d8e8f8;
+}
+
+.mainContainer img{
+    /*margin-top: 20px;*/
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+}
+.innerCard{
+    margin-left: 20px;
+}
+.innerCard p{
+    margin: 0;
+}
+.innerCard h4{
+    color: #26A4FF;
+    margin: 10px 0 10px 0;
+}
+.innerCard div{
+    width: 360px;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

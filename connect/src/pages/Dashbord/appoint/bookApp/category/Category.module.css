@@ -1,0 +1,10 @@
+.main{
+    background-color: blue;
+    border-radius: 30px;
+    height: 50px;
+    margin-bottom: 20px;
+    width: 250px;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+}
