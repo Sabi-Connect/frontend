@@ -162,6 +162,7 @@ const SkilledWorkerSignUp = () => {
                                                 borderRadius: '9999px',
                                                 '&:hover': {
                                                     backgroundColor: '',
+
                                                 },
                                             }}
                                             className={style.signButton}
