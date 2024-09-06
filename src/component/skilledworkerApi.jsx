@@ -19,35 +19,54 @@ export const addSkillApi = async (userData) => {
 };
 
 export const skillWorkerApi = async (userData) => {
-    const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/registerSkilledWorker', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-    });
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/registerSkilledWorker';
+    try {
+        const response = await fetch(URL,  {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData)
+        })
+        console.log(JSON.stringify(userData));
+        console.log(response);
 
-    if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'An error occurred');
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
+        }
+
+        const result = await response.json();
+        console.log(result);
+        return result;
+    } catch (error) {
+        console.error('Error during skilled worker signup:', error.message);
+        throw error;
     }
-
-    return await response.json();
 };
 
-
-
+// Change the URL to the correct one for client login
 export const loginApi = async (loginData) => {
     try {
-        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/login', loginData);
+        // Use the client login endpoint if this is for clients
+        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/client/login', loginData);
     } catch (error) {
         throw error;
     }
 };
 
 
+// export const loginApi = async (loginData) => {
+//     try {
+//         return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/client/login', loginData);
+//     } catch (error) {
+//         throw error;
+//     }
+// };
+
+
 // export const bookingApi = async (userData) => {
-//     const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/client/registerClient', {
+//     const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/bookAppointment', {
 //         method: 'POST',
 //         headers: {
 //             'Content-Type': 'application/json',

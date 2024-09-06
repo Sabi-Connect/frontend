@@ -1,31 +1,4 @@
 import axios from "axios";
-
-export async function callClientNothingEndpoint() {
-    const url = 'http://localhost:8080/api/v1/client/nothing';
-
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    };
-
-    try {
-        const response = await fetch(url, requestOptions);
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message}`);
-        }
-
-        const data = await response.json();
-        console.log('Response data:', data);
-
-    } catch (error) {
-        console.error('Error during fetch:', error.message);
-    }
-}
-
 export const clientSignupApi = async (userData) => {
     console.log(userData);
 

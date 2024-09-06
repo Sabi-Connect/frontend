@@ -43,7 +43,7 @@
 /*    gap: 2px;*/
 /*}*/
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .nav {
         flex-direction: column;
         justify-content: center;
@@ -60,7 +60,7 @@
 
     .nav2 {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 1px;
         flex-direction: column; /* Stack the navigation items */
         gap: 2rem;
         padding-right: 0;
@@ -70,7 +70,7 @@
 
     .btn1 {
         font-size: medium;
-        padding: 5px 20px;
+        padding: 5px 2px;
     }
 }
 
