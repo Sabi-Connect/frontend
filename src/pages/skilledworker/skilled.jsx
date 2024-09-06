@@ -177,7 +177,7 @@ const SkilledWorkerSignUp = () => {
                                             <p>By clicking 'SignUp', you acknowledge that you have read and accept
                                                 the <span
                                                     className={style.terms}>Terms of Service</span> and <span
-                                                    className={style.terms}> Privacy Policy</span> .
+                                                    className={style.terms}> Privacy Policy</span>
                                             </p>
                                         </div>
                                     </div>
