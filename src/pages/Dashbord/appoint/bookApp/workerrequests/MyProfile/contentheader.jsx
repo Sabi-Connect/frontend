@@ -66,7 +66,7 @@ const ContentHeader = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await updateProfileApi(userData);
+            const response = await updateProfileApi(e);
 
             if (response.ok) {
 
