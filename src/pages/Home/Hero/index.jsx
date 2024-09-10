@@ -384,6 +384,9 @@ const Hero = () => {
 
     return (
         <div>
+            <div>
+                hello people of God
+            </div>
             <div className={style.heroInner}>
                 <div className={style.heroText}>
                     <h1 className={style.her2}>Discover more than 5000 <span className={style.her4}> skilled workers</span></h1>
