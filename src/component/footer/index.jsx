@@ -11,8 +11,6 @@ const Footer = () => {
                     <p className={style.text}>Great platform to connect that
                         both Clients and Skilled workers<br/>to give them a happy ending</p>
                 </div>
-                <div>Hello world</div>
-
                 <div>
                     <h1 className={style.fot2}>About</h1>
                     <p>Terms</p>
