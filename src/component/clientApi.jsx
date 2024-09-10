@@ -2,8 +2,8 @@ import axios from "axios";
 export const clientSignupApi = async (userData) => {
     console.log(userData);
 
-    // const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
-    const URL = 'http://localhost:8080/api/v1/client/registerClient';
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
+    // const URL = 'http://localhost:8080/api/v1/client/registerClient';
 
     try {
         const response = await fetch(URL,  {
@@ -32,8 +32,8 @@ export const clientSignupApi = async (userData) => {
 export const updateAppointmentApi = async (userData) => {
     console.log(userData);
 
-    // const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
-    const URL = 'http://localhost:8080/api/v1/client/updateAppointment';
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/updateAppointment';
+    // const URL = 'http://localhost:8080/api/v1/client/updateAppointment';
 
     try {
         const response = await fetch(URL,  {
@@ -61,7 +61,8 @@ export const updateAppointmentApi = async (userData) => {
 };
 
 export const cancelAppointmentApi = async (userData) => {
-    const URL = 'http://localhost:8080/api/v1/client/cancelAppointment';
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/cancelAppointment';
+    // const URL = 'http://localhost:8080/api/v1/client/cancelAppointment';
     // const response = await fetch('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/cancelAppointment', {
     //     method: 'POST',
     //     headers: {
@@ -103,14 +104,17 @@ export const cancelAppointmentApi = async (userData) => {
 };
 export const loginApi = async (loginData) => {
     try {
-        return await axios.post('http://localhost:8080/api/v1/client/login', loginData);
-        // return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/client/login', loginData);
+        // return await axios.post('http://localhost:8080/api/v1/client/login', loginData);
+        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/client/login', loginData);
     } catch (error) {
         throw error;
     }
 };
 export const bookingApi = async (userData) => {
-    const URL = 'http://localhost:8080/api/v1/client/bookAppointment';
+
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/bookAppointment'
+    // const URL = 'http://localhost:8080/api/v1/client/bookAppointment';
+
 
     try {
         const response = await fetch(URL,  {
@@ -149,7 +153,8 @@ export const bookingApi = async (userData) => {
     // return await response.json();
 };
 export const viewAllAppointmentApi = async (userData) => {
-    const URL = 'http://localhost:8080/api/v1/client/viewAllAppointment';
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/viewAllAppointment';
+    // const URL = 'http://localhost:8080/api/v1/client/viewAllAppointment';
     try {
         const response = await fetch(URL,  {
             method: "POST",
@@ -187,7 +192,7 @@ export const viewAllAppointmentApi = async (userData) => {
     // return await response.json();
 };
 export const deleteAppointmentApi = async (userData) => {
-    const URL = 'http://localhost:8080/api/v1/client/registerClient';
+    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/deleteAppointment';
 
     try {
         const response = await fetch(URL,  {

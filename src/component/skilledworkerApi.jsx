@@ -57,7 +57,7 @@ export const skillWorkerApi = async (userData) => {
 export const loginApi = async (loginData) => {
     try {
         // Use the client login endpoint if this is for clients
-        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/client/login', loginData);
+        return await axios.post('https://sabiconnect-latest.onrender.com/api/v1/skilledWorker/login', loginData);
     } catch (error) {
         throw error;
     }
