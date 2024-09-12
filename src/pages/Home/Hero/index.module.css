@@ -79,6 +79,25 @@
     color: #26A4FF;
 }
 
+.success {
+    background-color: #d1fae5; /* bg-green-100 */
+    color: #16a34a; /* text-green-600 */
+}
+
+/* Styles for when the response is not successful */
+.error {
+    background-color: #fee2e2; /* bg-red-100 */
+    color: #dc2626; /* text-red-600 */
+}
+
+/* Common styles */
+.common {
+    margin-top: 1rem; /* mt-4 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.375rem; /* rounded-md */
+}
+
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .heroInner {
