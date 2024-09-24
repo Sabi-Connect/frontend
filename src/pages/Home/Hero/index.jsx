@@ -21,6 +21,68 @@ import 'leaflet/dist/leaflet.css';
 const Hero = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [workers, setWorkers] = useState([]); // State to store workers' locations
+    const mapRef = useRef(null); // Use a ref to store the map instance
+
+    // Fetch skilled workers near the user's location
+    const fetchWorkers = async (lat, lon) => {
+        try {
+            // Make an API call to your backend to get workers near the given latitude and longitude
+            const response = await axios.get(`https://your-backend-api.com/workers?lat=${lat}&lon=${lon}`);
+            setWorkers(response.data); // Assuming the response contains an array of workers with location data
+        } catch (error) {
+            console.error('Error fetching skilled workers:', error);
+        }
+    };
+
+    // Update the map when a search result is clicked
+    const handleLocationClick = (lat, lon, displayName) => {
+        if (mapRef.current) {
+            mapRef.current.setView([lat, lon], 13); // Center the map at the new location
+            L.marker([lat, lon]).addTo(mapRef.current).bindPopup(`Selected Location: ${displayName}`).openPopup();
+        }
+    };
+
+    // Initialize the map and locate the user
+    useEffect(() => {
+        if (!mapRef.current) {
+            const mapInstance = L.map('map').setView([39.75621, -104.99404], 13); // Default map center
+            mapRef.current = mapInstance;
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
+            }).addTo(mapInstance);
+
+            // Handle user's current location
+            mapInstance.locate({ setView: true, maxZoom: 16 });
+
+            mapInstance.on('locationfound', (e) => {
+                const radius = e.accuracy / 2;
+                L.marker(e.latlng).addTo(mapInstance)
+                    .bindPopup(`You are within ${radius} meters from this point.`).openPopup();
+                L.circle(e.latlng, radius).addTo(mapInstance);
+
+                // Fetch skilled workers near the user's location
+                fetchWorkers(e.latlng.lat, e.latlng.lng);
+            });
+
+            mapInstance.on('locationerror', () => {
+                alert('Location access denied.');
+            });
+        }
+    }, []);
+
+    // Add markers for skilled workers
+    useEffect(() => {
+        if (mapRef.current && workers.length > 0) {
+            workers.forEach((worker) => {
+                L.marker([worker.lat, worker.lon])
+                    .addTo(mapRef.current)
+                    .bindPopup(`<strong>${worker.name}</strong><br>${worker.skill}`)
+                    .openPopup();
+            });
+        }
+    }, [workers]);
 
     // Search for a location
     const handleSearch = async (e) => {
@@ -34,42 +96,57 @@ const Hero = () => {
             }
         }
     };
-
-    // Update the map when a search result is clicked
-    const handleLocationClick = (lat, lon, displayName) => {
-        if (mapRef.current) {
-            mapRef.current.setView([lat, lon], 13); // Center the map at the new location
-            L.marker([lat, lon]).addTo(mapRef.current).bindPopup(`Selected Location: ${displayName}`).openPopup();
-        }
-    };
-
+    // const [searchTerm, setSearchTerm] = useState('');
+    // const [searchResults, setSearchResults] = useState([]);
+    //
+    // // Search for a location
+    // const handleSearch = async (e) => {
+    //     e.preventDefault();
+    //     if (searchTerm.trim() !== '') {
+    //         try {
+    //             const response = await axios.get(`https://nominatim.openstreetmap.org/search?q=${searchTerm}&format=json&limit=5`);
+    //             setSearchResults(response.data);
+    //         } catch (error) {
+    //             console.error('Error fetching the location:', error);
+    //         }
+    //     }
+    // };
+    //
+    // // Update the map when a search result is clicked
+    // const handleLocationClick = (lat, lon, displayName) => {
+    //     if (mapRef.current) {
+    //         mapRef.current.setView([lat, lon], 13); // Center the map at the new location
+    //         L.marker([lat, lon]).addTo(mapRef.current).bindPopup(`Selected Location: ${displayName}`).openPopup();
+    //     }
+    // };
+    //
     const navigate = useNavigate();
-    const mapRef = useRef(null); // Use a ref to store the map instance
-
-    useEffect(() => {
-        if (!mapRef.current) {
-            const mapInstance = L.map('map').setView([39.75621, -104.99404], 13); // Initialize the map
-            mapRef.current = mapInstance;
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(mapInstance);
-
-            // Handle user's current location
-            mapInstance.locate({ setView: true, maxZoom: 16 });
-
-            mapInstance.on('locationfound', (e) => {
-                const radius = e.accuracy / 2;
-                L.marker(e.latlng).addTo(mapInstance)
-                    .bindPopup(`You are within ${radius} meters from this point.`).openPopup();
-                L.circle(e.latlng, radius).addTo(mapInstance);
-            });
-
-            mapInstance.on('locationerror', () => {
-                alert('Location access denied.');
-            });
-        }
-    }, []);
+    // const mapRef = useRef(null); // Use a ref to store the map instance
+    //
+    // useEffect(() => {
+    //     if (!mapRef.current) {
+    //         const mapInstance = L.map('map').setView([39.75621, -104.99404], 13); // Initialize the map
+    //         mapRef.current = mapInstance;
+    //
+    //         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    //         }).addTo(mapInstance);
+    //
+    //         // Handle user's current location
+    //         mapInstance.locate({ setView: true, maxZoom: 16 });
+    //
+    //         mapInstance.on('locationfound', (e) => {
+    //             const radius = e.accuracy / 2;
+    //             L.marker(e.latlng).addTo(mapInstance)
+    //                 .bindPopup(`You are within ${radius} meters from this point.`).openPopup();
+    //             L.circle(e.latlng, radius).addTo(mapInstance);
+    //         });
+    //
+    //         mapInstance.on('locationerror', () => {
+    //             alert('Location access denied.');
+    //         });
+    //     }
+    // }, []);
 
     return (
         <div>

@@ -27,7 +27,7 @@ const Dashboard = () => {
 
                 </a>
                 <a href="#" className={style.item}>
-                    <BiSolidReport className={style.logoIcon}/>
+                    <BiSolidReport className={style.logoIcon} onClick={() => navigate('/update')}/>
                     My Profile
                 </a>
 
