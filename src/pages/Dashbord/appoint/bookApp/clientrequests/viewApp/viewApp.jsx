@@ -6,13 +6,30 @@ const ViewAllAppointments = () => {
         const [loading, setLoading] = useState(false);
         const [error, setError] = useState(null);
 
+        // const handleViewAppointments = async () => {
+        //         setLoading(true);
+        //         setError(null);
+        //
+        //         try {
+        //                 const userData = {};
+        //                 const result = await viewAllAppointmentApi(userData);
+        //                 setAppointments(result);
+        //                 console.log('Appointments fetched:', result);
+        //         } catch (error) {
+        //                 console.error('Error fetching appointments:', error.message);
+        //                 setError(error.message);
+        //         } finally {
+        //                 setLoading(false);
+        //         }
+        // };
+
         const handleViewAppointments = async () => {
                 setLoading(true);
                 setError(null);
 
                 try {
-                        const userData = {};
-                        const result = await viewAllAppointmentApi(userData);
+                        const clientId = localStorage.getItem('userId'); // Assuming clientId is stored in localStorage
+                        const result = await viewAllAppointmentApi(clientId);
                         setAppointments(result);
                         console.log('Appointments fetched:', result);
                 } catch (error) {
@@ -22,6 +39,7 @@ const ViewAllAppointments = () => {
                         setLoading(false);
                 }
         };
+
 
         return (
             <div>

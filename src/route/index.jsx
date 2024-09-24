@@ -54,7 +54,7 @@ export const ROUTE = [
         element: <MyDashboard/>,
     },
     {
-        path: "appoint",
+        path: "/appoint",
         element: <Appoint/>
     },
     {
@@ -62,11 +62,11 @@ export const ROUTE = [
         element: <BookAppointment/>
     },
     {
-        path: "/cancel",
+        path: "cancel",
         element: <CancelAppointment/>
     },
     {
-        path: "/view",
+        path: "view",
         element: <ViewAllAppointments/>
     },
     {
@@ -85,6 +85,9 @@ export const ROUTE = [
     {
         path:"/appMan",
         element: <AppointmentManager/>
+    },
+    {
+
     }
 
 ]

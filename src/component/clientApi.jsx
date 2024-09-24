@@ -4,7 +4,6 @@ export const clientSignupApi = async (userData) => {
 
     const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/registerClient';
     // const URL = 'http://localhost:8080/api/v1/client/registerClient';
-
     try {
         const response = await fetch(URL,  {
             method: "POST",
@@ -25,7 +24,7 @@ export const clientSignupApi = async (userData) => {
         console.log(result);
         return result;
     } catch (error) {
-        console.error('Error during client signup:', error.message);
+        console.error('Error during skilled worker signup:', error.message);
         throw error;
     }
 };
@@ -152,18 +151,17 @@ export const bookingApi = async (userData) => {
     // }
     // return await response.json();
 };
-export const viewAllAppointmentApi = async (userData) => {
-    const URL = 'https://sabiconnect-latest.onrender.com/api/v1/client/viewAllAppointment';
+export const viewAllAppointmentApi = async (clientId) => {
+    const URL = `https://sabiconnect-latest.onrender.com/api/v1/client/viewAllAppointment?clientId=${clientId}`;
     // const URL = 'http://localhost:8080/api/v1/client/viewAllAppointment';
     try {
         const response = await fetch(URL,  {
-            method: "POST",
+            method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(userData)
+
         })
-        console.log(JSON.stringify(userData));
         console.log(response);
 
         if (!response.ok) {

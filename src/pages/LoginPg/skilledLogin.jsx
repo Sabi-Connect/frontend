@@ -158,6 +158,7 @@ const SkilledLogin = () => {
                                             },
                                         }}
                                         disabled={loading}
+                                        onClick={() => navigate('/dashboard')}
                                     >
                                         {loading ? 'Loading...' : ''}
                                         Log in
